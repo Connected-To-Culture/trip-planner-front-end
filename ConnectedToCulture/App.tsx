@@ -15,6 +15,7 @@ import { CreateAccount, Welcome,Signin,TermsAndConditions,ResetPassword} from '.
 import { StatusBar,StyleSheet} from 'react-native';
 import BottomTabNavigation from './navigation/BottomTabNavigation';
 import COLORS from './constants/theme';
+import SurveyNavigator from './screens/survey/SurveyNavigator';
 
 function App(): React.JSX.Element {
  // Set the status bar background color
@@ -25,7 +26,7 @@ StatusBar.setBarStyle('dark-content');
 
   const Stack=createNativeStackNavigator();
   return (
-    
+
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen name='Signin' component={Signin} options={{headerShown:false}} />
@@ -34,6 +35,7 @@ StatusBar.setBarStyle('dark-content');
       <Stack.Screen name='ResetPassword' component={ResetPassword} options={{headerShown:false}} />
       <Stack.Screen name='BottomNavigation' component={BottomTabNavigation} options={{headerShown:false}} />
       <Stack.Screen name='Welcome' component={Welcome} options={{headerShown:false}} />
+      <Stack.Screen name='SurveyNavigator' component={SurveyNavigator} options={{headerShown:false}} />
     </Stack.Navigator>
   </NavigationContainer>
   );
