@@ -5,7 +5,7 @@ import globalStylesAndRowWithSpace from '../../constants/global.style';
 import { CountriesToExplore, HeightSpacer, NoTripPlan, RecentTripPlan, Recommendations } from '../../components';
 
 
-const Home = (navigation) => {
+const Home = ({navigation}) => {
   const { globalStyles, rowWithSpace } = globalStylesAndRowWithSpace;
   return (
     <View style={{flex: 1}}>
@@ -13,10 +13,10 @@ const Home = (navigation) => {
   <View style={homeStyles.container}>
     <View style={[rowWithSpace('space-between'),homeStyles.header]}>
       <Text style={homeStyles.headerText}>Hi,MK</Text>
-      <Image 
-        style={homeStyles.avatar} 
+      <Image
+        style={homeStyles.avatar}
         source={require('../../assets/images/photo/avatar.jpg')}
-        resizeMode='cover' 
+        resizeMode='cover'
       />
     </View>
     <View style={homeStyles.components}>
@@ -28,7 +28,7 @@ const Home = (navigation) => {
       <CountriesToExplore navigation={navigation}/>
       <HeightSpacer height={20}/>
       <Recommendations navigation={navigation}/>
-      
+
     </View>
   </View>
 </ScrollView>
