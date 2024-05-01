@@ -1,13 +1,15 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SurveyStart from '../../components/survey/SurveyStart'; // Import SurveyStart component
+import SurveyStart from '../../components/survey/SurveyStart';
+import Survey1 from '../../components/survey/Survey1';
 
 const Stack = createNativeStackNavigator();
 
 const SurveyNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="SurveyStart" component={SurveyStart} />
+      <Stack.Screen name="SurveyStart" component={SurveyStart} options={{headerShown: false}}/>
+      <Stack.Screen name="Survey1" component={Survey1} options={{headerShown: false}}/>
       {/* Define other screens within the Survey Navigator if needed */}
     </Stack.Navigator>
   );
