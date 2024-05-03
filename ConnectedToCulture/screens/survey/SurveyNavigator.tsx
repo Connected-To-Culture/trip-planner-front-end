@@ -1,8 +1,9 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import SurveyStart from '../../components/survey/SurveyStart';
 import Survey1 from '../../components/survey/Survey1';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import Survey2 from '../../components/survey/Survey2';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,11 @@ const SurveyNavigator = () => {
         <Stack.Screen
           name="Survey1"
           component={Survey1}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Survey2"
+          component={Survey2}
           options={{headerShown: false}}
         />
         {/* Define other screens within the Survey Navigator if needed */}
