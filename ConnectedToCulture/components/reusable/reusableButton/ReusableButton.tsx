@@ -16,9 +16,10 @@ interface Props {
     paddingHorizantal:number;
     paddingVertical:number;
     size:number;
+    borderRadius:number
 }
 
-const ResuableButton: React.FC<Props> = ({ onPress, btnText, textColor, width, backgroundColor, borderWidth=1, borderColor,paddingHorizantal,paddingVertical,size}) => {
+const ResuableButton: React.FC<Props> = ({ onPress, btnText, textColor, width, backgroundColor, borderWidth=1, borderColor,paddingHorizantal,paddingVertical,size, borderRadius}) => {
     const defaultBorderColor = typeof borderColor === 'undefined' ? backgroundColor : borderColor
     const btnTextStyle: TextStyle = {
         fontFamily: 'Almarai',
@@ -32,7 +33,7 @@ const ResuableButton: React.FC<Props> = ({ onPress, btnText, textColor, width, b
         alignItems: "center",
         justifyContent: "center",
         height: 'auto',
-        borderRadius: 5,
+        borderRadius: borderRadius || 5,
         borderColor: typeof defaultBorderColor === 'string' ? defaultBorderColor : COLORS[defaultBorderColor],
         borderWidth: borderWidth,
         paddingHorizontal: paddingHorizantal,
