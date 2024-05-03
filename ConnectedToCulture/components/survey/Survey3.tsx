@@ -1,0 +1,172 @@
+import {View, Text, ScrollView} from 'react-native';
+import {Dimensions} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {NavigationProp} from '@react-navigation/native';
+import ResuableButton from '../reusable/reusableButton/ReusableButton';
+import COLORS from '../../constants/theme';
+import surveyStyles from './survey.style';
+
+type Survey3Props = {
+  navigation: NavigationProp<any>;
+};
+
+const Survey3 = ({navigation}: Survey3Props) => {
+  const initalSelectedValue = {
+    airplane: false,
+    public: false,
+    car: false,
+    bicycle: false,
+    notSure: false,
+  }
+
+  const [selected, setSelected] = useState(initalSelectedValue);
+  const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
+  const [orientation, setOrientation] = useState(
+    Dimensions.get('window').height > Dimensions.get('window').width
+      ? 'portrait'
+      : 'landscape'
+  );
+
+  useEffect(() => {
+    const onChange = () => {
+      const {height, width} = Dimensions.get('window');
+      setOrientation(height > width ? 'portrait' : 'landscape');
+      setCurWidth(width)
+    };
+
+    Dimensions.addEventListener('change', onChange);
+
+  }, []);
+
+  return (
+    <View style={surveyStyles.container}>
+      <ScrollView
+        style={{alignSelf: 'center'}}
+        showsVerticalScrollIndicator={false}>
+        {/* <Text style={[surveyStyles.question, {width: curWidth * 0.9}]}> */}
+        <Text style={surveyStyles.question}>
+          Q3. What are your preferred modes of transportation during travel?
+        </Text>
+        <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
+
+        <View style={surveyStyles.surveyBtnsContainer}>
+          <ResuableButton
+            backgroundColor={selected.airplane ? COLORS.primary : COLORS.white}
+            borderColor={selected.airplane ? COLORS.primary : COLORS.darkGray}
+            borderWidth={1}
+            btnText="Airplane"
+            onPress={() =>
+              setSelected({...selected, airplane: !selected.airplane})
+            }
+            paddingHorizantal={24}
+            paddingVertical={13}
+            size={16}
+            textColor={selected.airplane ? COLORS.white : COLORS.black}
+            width={
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+            }
+          />
+          <ResuableButton
+            backgroundColor={selected.public ? COLORS.primary : COLORS.white}
+            borderColor={selected.public ? COLORS.primary : COLORS.darkGray}
+            borderWidth={1}
+            btnText="Public transportation (e.g. bus, train)"
+            onPress={() => setSelected({...selected, public: !selected.public})}
+            paddingHorizantal={24}
+            paddingVertical={13}
+            size={16}
+            textColor={selected.public ? COLORS.white : COLORS.black}
+            width={
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+            }
+          />
+          <ResuableButton
+            backgroundColor={selected.car ? COLORS.primary : COLORS.white}
+            borderColor={selected.car ? COLORS.primary : COLORS.darkGray}
+            borderWidth={1}
+            btnText="Car"
+            onPress={() => setSelected({...selected, car: !selected.car})}
+            paddingHorizantal={24}
+            paddingVertical={13}
+            size={16}
+            textColor={selected.car ? COLORS.white : COLORS.black}
+            width={
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+            }
+          />
+          <ResuableButton
+            backgroundColor={selected.bicycle ? COLORS.primary : COLORS.white}
+            borderColor={selected.bicycle ? COLORS.primary : COLORS.darkGray}
+            borderWidth={1}
+            btnText="Bicycle"
+            onPress={() =>
+              setSelected({...selected, bicycle: !selected.bicycle})
+            }
+            paddingHorizantal={24}
+            paddingVertical={13}
+            size={16}
+            textColor={selected.bicycle ? COLORS.white : COLORS.black}
+            width={
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+            }
+          />
+          <ResuableButton
+            backgroundColor={selected.notSure ? COLORS.primary : COLORS.white}
+            borderColor={selected.notSure ? COLORS.primary : COLORS.darkGray}
+            borderWidth={1}
+            btnText="I'm not sure yet"
+            onPress={() =>
+              setSelected({...selected, notSure: !selected.notSure})
+            }
+            paddingHorizantal={24}
+            paddingVertical={13}
+            size={16}
+            textColor={selected.notSure ? COLORS.white : COLORS.black}
+            width={
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+            }
+          />
+
+        </View>
+
+        <View
+          style={
+            orientation === 'portrait'
+              ? surveyStyles.backNextBtnContainer
+              : surveyStyles.backNextBtnContainerLandscape
+          }>
+          <ResuableButton
+            backgroundColor={COLORS.white}
+            borderColor={COLORS.primary}
+            borderWidth={1}
+            btnText="Back"
+            onPress={() => navigation.navigate('Survey2')}
+            paddingHorizantal={16}
+            paddingVertical={8}
+            size={16}
+            textColor={COLORS.primary}
+            width={
+              orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
+            }
+          />
+          <ResuableButton
+            backgroundColor={COLORS.primary}
+            borderColor={COLORS.primary}
+            borderWidth={1}
+            btnText="Next"
+            onPress={() => navigation.navigate('Survey4')}
+            paddingHorizantal={16}
+            paddingVertical={8}
+            size={16}
+            textColor={COLORS.white}
+            width={
+              orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
+            }
+          />
+        </View>
+      </ScrollView>
+    </View>
+  );
+};
+
+export default Survey3;
