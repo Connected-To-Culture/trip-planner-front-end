@@ -1,9 +1,14 @@
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
+import {NavigationProp} from '@react-navigation/native';
 import ResuableButton from '../reusable/reusableButton/ReusableButton';
 import COLORS from '../../constants/theme';
 
-const Survey1 = ({navigation}) => {
+type Survey1Props = {
+  navigation: NavigationProp<any>;
+};
+
+const Survey1 = ({navigation}: Survey1Props) => {
   const initalSelectedValue = {
     NG: false,
     ET: false,

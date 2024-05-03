@@ -1,14 +1,19 @@
 import {View, Text, Button, StyleSheet} from 'react-native';
 import {Dimensions} from 'react-native';
 import React from 'react';
+import {NavigationProp} from '@react-navigation/native';
 import ResuableButton from '../reusable/reusableButton/ReusableButton';
 import globalStylesAndRowWithSpace from '../../constants/global.style';
 import COLORS from '../../constants/theme';
 import globalStyle from '../../constants/global.style';
 
-const SurveyStart = ({navigation}) => {
-  const { width, height } = Dimensions.get("window");
-  const { globalStyles } = globalStylesAndRowWithSpace;
+type SurveyStartProps = {
+  navigation: NavigationProp<any>;
+};
+
+const SurveyStart = ({navigation}: SurveyStartProps) => {
+  const {width, height} = Dimensions.get('window');
+  const {globalStyles} = globalStylesAndRowWithSpace;
 
   return (
     <View style={styles.container}>
