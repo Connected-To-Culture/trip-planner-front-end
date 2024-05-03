@@ -43,154 +43,167 @@ const Survey1 = ({navigation}: Survey1Props) => {
   return (
     <View style={surveyStyles.container}>
       <ScrollView
-        style={{alignSelf: 'center'}}
+        contentContainerStyle={[
+          surveyStyles.scrollViewStyles,
+          {flex: orientation === 'landscape' ? undefined : 1}
+        ]}
         showsVerticalScrollIndicator={false}>
-        <Text style={surveyStyles.question}>
-          Q1. Which African countries are you interested in visiting?
-        </Text>
-        <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
+        <View style={surveyStyles.subContainer}>
+          <View>
+            <Text style={surveyStyles.question}>
+              Q1. Which African countries are you interested in visiting?
+            </Text>
+            <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
 
-        <View style={surveyStyles.surveyBtnsContainer}>
-          <ResuableButton
-            backgroundColor={selected.NG ? COLORS.primary : COLORS.white}
-            borderColor={selected.NG ? COLORS.primary : COLORS.darkGray}
-            borderRadius={10}
-            borderWidth={1}
-            btnText="Nigeria (NG)"
-            onPress={() => setSelected({...selected, NG: !selected.NG})}
-            paddingHorizantal={24}
-            paddingVertical={13}
-            size={16}
-            textColor={selected.NG ? COLORS.white : COLORS.black}
-            width={
-              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-            }
-          />
-          <ResuableButton
-            backgroundColor={selected.ET ? COLORS.primary : COLORS.white}
-            borderColor={selected.ET ? COLORS.primary : COLORS.darkGray}
-            borderRadius={10}
-            borderWidth={1}
-            btnText="Ethiopia (ET)"
-            onPress={() => setSelected({...selected, ET: !selected.ET})}
-            paddingHorizantal={24}
-            paddingVertical={13}
-            size={16}
-            textColor={selected.ET ? COLORS.white : COLORS.black}
-            width={
-              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-            }
-          />
-          <ResuableButton
-            backgroundColor={selected.TG ? COLORS.primary : COLORS.white}
-            borderColor={selected.TG ? COLORS.primary : COLORS.darkGray}
-            borderRadius={10}
-            borderWidth={1}
-            btnText="Togo (TG)"
-            onPress={() => setSelected({...selected, TG: !selected.TG})}
-            paddingHorizantal={24}
-            paddingVertical={13}
-            size={16}
-            textColor={selected.TG ? COLORS.white : COLORS.black}
-            width={
-              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-            }
-          />
-          <ResuableButton
-            backgroundColor={selected.ZA ? COLORS.primary : COLORS.white}
-            borderColor={selected.ZA ? COLORS.primary : COLORS.darkGray}
-            borderRadius={10}
-            borderWidth={1}
-            btnText="South Africa (ZA)"
-            onPress={() => setSelected({...selected, ZA: !selected.ZA})}
-            paddingHorizantal={24}
-            paddingVertical={13}
-            size={16}
-            textColor={selected.ZA ? COLORS.white : COLORS.black}
-            width={
-              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-            }
-          />
-          <ResuableButton
-            backgroundColor={selected.GH ? COLORS.primary : COLORS.white}
-            borderColor={selected.GH ? COLORS.primary : COLORS.darkGray}
-            borderRadius={10}
-            borderWidth={1}
-            btnText="Ghana (GH)"
-            onPress={() => setSelected({...selected, GH: !selected.GH})}
-            paddingHorizantal={24}
-            paddingVertical={13}
-            size={16}
-            textColor={selected.GH ? COLORS.white : COLORS.black}
-            width={
-              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-            }
-          />
-          <ResuableButton
-            backgroundColor={selected.Zambia ? COLORS.primary : COLORS.white}
-            borderColor={selected.Zambia ? COLORS.primary : COLORS.darkGray}
-            borderRadius={10}
-            borderWidth={1}
-            btnText="Zambia"
-            onPress={() => setSelected({...selected, Zambia: !selected.Zambia})}
-            paddingHorizantal={24}
-            paddingVertical={13}
-            size={16}
-            textColor={selected.Zambia ? COLORS.white : COLORS.black}
-            width={
-              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-            }
-          />
+            <View style={surveyStyles.surveyBtnsContainer}>
+              <ResuableButton
+                backgroundColor={selected.NG ? COLORS.primary : COLORS.white}
+                borderColor={selected.NG ? COLORS.primary : COLORS.darkGray}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Nigeria (NG)"
+                onPress={() => setSelected({...selected, NG: !selected.NG})}
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.NG ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                backgroundColor={selected.ET ? COLORS.primary : COLORS.white}
+                borderColor={selected.ET ? COLORS.primary : COLORS.darkGray}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Ethiopia (ET)"
+                onPress={() => setSelected({...selected, ET: !selected.ET})}
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.ET ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                backgroundColor={selected.TG ? COLORS.primary : COLORS.white}
+                borderColor={selected.TG ? COLORS.primary : COLORS.darkGray}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Togo (TG)"
+                onPress={() => setSelected({...selected, TG: !selected.TG})}
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.TG ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                backgroundColor={selected.ZA ? COLORS.primary : COLORS.white}
+                borderColor={selected.ZA ? COLORS.primary : COLORS.darkGray}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="South Africa (ZA)"
+                onPress={() => setSelected({...selected, ZA: !selected.ZA})}
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.ZA ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                backgroundColor={selected.GH ? COLORS.primary : COLORS.white}
+                borderColor={selected.GH ? COLORS.primary : COLORS.darkGray}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Ghana (GH)"
+                onPress={() => setSelected({...selected, GH: !selected.GH})}
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.GH ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                backgroundColor={
+                  selected.Zambia ? COLORS.primary : COLORS.white
+                }
+                borderColor={selected.Zambia ? COLORS.primary : COLORS.darkGray}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Zambia"
+                onPress={() =>
+                  setSelected({...selected, Zambia: !selected.Zambia})
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.Zambia ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
 
-          <View style={surveyStyles.specifyOtherContainer}>
-            <Text style={surveyStyles.otherText}>Other (please specify):</Text>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              onChangeText={text => setTextInput(text)}
-              style={surveyStyles.textInput}
-              width={curWidth * 0.5}
-              value={textInput}
+              <View style={surveyStyles.specifyOtherContainer}>
+                <Text style={surveyStyles.otherText}>
+                  Other (please specify):
+                </Text>
+                <TextInput
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  onChangeText={text => setTextInput(text)}
+                  style={surveyStyles.textInput}
+                  width={curWidth * 0.5}
+                  value={textInput}
+                />
+              </View>
+            </View>
+          </View>
+
+          <View
+            style={
+              orientation === 'portrait'
+                ? surveyStyles.backNextBtnContainer
+                : surveyStyles.backNextBtnContainerLandscape
+            }>
+            <ResuableButton
+              backgroundColor={COLORS.white}
+              borderColor={COLORS.primary}
+              borderRadius={8}
+              borderWidth={1}
+              btnText="Back"
+              onPress={() => navigation.navigate('SurveyStart')}
+              paddingHorizantal={16}
+              paddingVertical={8}
+              size={16}
+              textColor={COLORS.primary}
+              width={
+                orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
+              }
+            />
+            <ResuableButton
+              backgroundColor={COLORS.primary}
+              borderColor={COLORS.primary}
+              borderRadius={8}
+              borderWidth={1}
+              btnText="Next"
+              onPress={() => navigation.navigate('Survey2')}
+              paddingHorizantal={16}
+              paddingVertical={8}
+              size={16}
+              textColor={COLORS.white}
+              width={
+                orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
+              }
             />
           </View>
-        </View>
-
-        <View
-          style={
-            orientation === 'portrait'
-              ? surveyStyles.backNextBtnContainer
-              : surveyStyles.backNextBtnContainerLandscape
-          }>
-          <ResuableButton
-            backgroundColor={COLORS.white}
-            borderColor={COLORS.primary}
-            borderRadius={8}
-            borderWidth={1}
-            btnText="Back"
-            onPress={() => navigation.navigate('SurveyStart')}
-            paddingHorizantal={16}
-            paddingVertical={8}
-            size={16}
-            textColor={COLORS.primary}
-            width={
-              orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
-            }
-          />
-          <ResuableButton
-            backgroundColor={COLORS.primary}
-            borderColor={COLORS.primary}
-            borderRadius={8}
-            borderWidth={1}
-            btnText="Next"
-            onPress={() => navigation.navigate('Survey2')}
-            paddingHorizantal={16}
-            paddingVertical={8}
-            size={16}
-            textColor={COLORS.white}
-            width={
-              orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
-            }
-          />
         </View>
       </ScrollView>
     </View>
