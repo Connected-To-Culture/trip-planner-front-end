@@ -10,14 +10,15 @@ const surveyStyles = StyleSheet.create({
     flexDirection: 'row',
     gap: 10,
     justifyContent: 'center',
-    marginTop: 100,
+    marginBottom: 10
   },
   backNextBtnContainerLandscape: {
     display: 'flex',
     flexDirection: 'row',
     gap: 10,
     justifyContent: 'center',
-    marginTop: 70,
+    marginBottom: 15,
+    marginTop: 30,
   },
   container: {
     backgroundColor: COLORS.white,
@@ -65,12 +66,21 @@ const surveyStyles = StyleSheet.create({
     lineHeight: 24,
     paddingBottom: 0,
   },
+  scrollViewStyles: {
+    alignSelf: 'center',
+  },
   specifyOtherContainer: {
     alignItems: 'center',
     display: 'flex',
     gap: 10,
     flexDirection: 'row',
     marginTop: 10
+  },
+  subContainer: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between'
   },
   subtitle: {
     color: COLORS.darkGray,
@@ -111,7 +121,6 @@ const surveyStyles = StyleSheet.create({
     lineHeight: 28.8,
     paddingBottom: 0,
   },
-
 });
 
 export {surveyStyles as default, height, width};
