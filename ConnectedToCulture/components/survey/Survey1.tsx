@@ -21,6 +21,8 @@ const Survey1 = ({navigation}: Survey1Props) => {
   }
 
   const [selected, setSelected] = useState(initalSelectedValue);
+  const [textInput, setTextInput] = useState('')
+  const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
       ? 'portrait'
@@ -31,6 +33,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
     const onChange = () => {
       const {height, width} = Dimensions.get('window');
       setOrientation(height > width ? 'portrait' : 'landscape');
+      setCurWidth(width)
     };
 
     Dimensions.addEventListener('change', onChange);
@@ -39,7 +42,9 @@ const Survey1 = ({navigation}: Survey1Props) => {
 
   return (
     <View style={surveyStyles.container}>
-      <ScrollView style={{alignSelf: 'center'}}>
+      <ScrollView
+        style={{alignSelf: 'center'}}
+        showsVerticalScrollIndicator={false}>
         <Text style={surveyStyles.question}>
           Q1. Which African countries are you interested in visiting?
         </Text>
@@ -57,9 +62,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
             size={16}
             textColor={selected.NG ? COLORS.white : COLORS.black}
             width={
-              orientation === 'portrait'
-                ? 350
-                : Dimensions.get('window').width * 0.7
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
             }
           />
           <ResuableButton
@@ -73,9 +76,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
             size={16}
             textColor={selected.ET ? COLORS.white : COLORS.black}
             width={
-              orientation === 'portrait'
-                ? 350
-                : Dimensions.get('window').width * 0.7
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
             }
           />
           <ResuableButton
@@ -89,9 +90,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
             size={16}
             textColor={selected.TG ? COLORS.white : COLORS.black}
             width={
-              orientation === 'portrait'
-                ? 350
-                : Dimensions.get('window').width * 0.7
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
             }
           />
           <ResuableButton
@@ -105,9 +104,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
             size={16}
             textColor={selected.ZA ? COLORS.white : COLORS.black}
             width={
-              orientation === 'portrait'
-                ? 350
-                : Dimensions.get('window').width * 0.7
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
             }
           />
           <ResuableButton
@@ -121,9 +118,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
             size={16}
             textColor={selected.GH ? COLORS.white : COLORS.black}
             width={
-              orientation === 'portrait'
-                ? 350
-                : Dimensions.get('window').width * 0.7
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
             }
           />
           <ResuableButton
@@ -137,9 +132,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
             size={16}
             textColor={selected.Zambia ? COLORS.white : COLORS.black}
             width={
-              orientation === 'portrait'
-                ? 350
-                : Dimensions.get('window').width * 0.7
+              orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
             }
           />
 
@@ -148,14 +141,10 @@ const Survey1 = ({navigation}: Survey1Props) => {
             <TextInput
               autoCapitalize="none"
               autoCorrect={false}
-              onChangeText={() => {}}
+              onChangeText={text => setTextInput(text)}
               style={surveyStyles.textInput}
-              width={
-                orientation === 'portrait'
-                  ? 200
-                  : Dimensions.get('window').width * 0.5
-              }
-              value={''}
+              width={curWidth * 0.5}
+              value={textInput}
             />
           </View>
         </View>
@@ -176,7 +165,9 @@ const Survey1 = ({navigation}: Survey1Props) => {
             paddingVertical={8}
             size={16}
             textColor={COLORS.primary}
-            width={orientation === 'portrait' ? 170 : 250}
+            width={
+              orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
+            }
           />
           <ResuableButton
             backgroundColor={COLORS.primary}
@@ -188,7 +179,9 @@ const Survey1 = ({navigation}: Survey1Props) => {
             paddingVertical={8}
             size={16}
             textColor={COLORS.white}
-            width={orientation === 'portrait' ? 170 : 250}
+            width={
+              orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
+            }
           />
         </View>
       </ScrollView>
