@@ -4,6 +4,7 @@ import React, {useState, useEffect} from 'react';
 import {NavigationProp} from '@react-navigation/native';
 import ResuableButton from '../reusable/reusableButton/ReusableButton';
 import COLORS from '../../constants/theme';
+import surveyStyles from './survey.style';
 
 type Survey1Props = {
   navigation: NavigationProp<any>;
@@ -37,17 +38,17 @@ const Survey1 = ({navigation}: Survey1Props) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={surveyStyles.container}>
       <ScrollView style={{alignSelf: 'center'}}>
-        <Text style={styles.question}>
+        <Text style={surveyStyles.question}>
           Q1. Which African countries are you interested in visiting?
         </Text>
-        <Text style={styles.subtitle}>(Select all that apply)</Text>
+        <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
 
-        <View style={styles.surveyBtnsContainer}>
+        <View style={surveyStyles.surveyBtnsContainer}>
           <ResuableButton
-            backgroundColor={selected.NG ? COLORS.darkGray : COLORS.white}
-            borderColor={COLORS.lightGray}
+            backgroundColor={selected.NG ? COLORS.primary : COLORS.white}
+            borderColor={selected.NG ? COLORS.primary : COLORS.darkGray}
             borderWidth={1}
             btnText="Nigeria (NG)"
             onPress={() => setSelected({...selected, NG: !selected.NG})}
@@ -62,8 +63,8 @@ const Survey1 = ({navigation}: Survey1Props) => {
             }
           />
           <ResuableButton
-            backgroundColor={selected.ET ? COLORS.darkGray : COLORS.white}
-            borderColor={COLORS.lightGray}
+            backgroundColor={selected.ET ? COLORS.primary : COLORS.white}
+            borderColor={selected.ET ? COLORS.primary : COLORS.darkGray}
             borderWidth={1}
             btnText="Ethiopia (ET)"
             onPress={() => setSelected({...selected, ET: !selected.ET})}
@@ -78,8 +79,8 @@ const Survey1 = ({navigation}: Survey1Props) => {
             }
           />
           <ResuableButton
-            backgroundColor={selected.TG ? COLORS.darkGray : COLORS.white}
-            borderColor={COLORS.lightGray}
+            backgroundColor={selected.TG ? COLORS.primary : COLORS.white}
+            borderColor={selected.TG ? COLORS.primary : COLORS.darkGray}
             borderWidth={1}
             btnText="Togo (TG)"
             onPress={() => setSelected({...selected, TG: !selected.TG})}
@@ -94,8 +95,8 @@ const Survey1 = ({navigation}: Survey1Props) => {
             }
           />
           <ResuableButton
-            backgroundColor={selected.ZA ? COLORS.darkGray : COLORS.white}
-            borderColor={COLORS.lightGray}
+            backgroundColor={selected.ZA ? COLORS.primary : COLORS.white}
+            borderColor={selected.ZA ? COLORS.primary : COLORS.darkGray}
             borderWidth={1}
             btnText="South Africa (ZA)"
             onPress={() => setSelected({...selected, ZA: !selected.ZA})}
@@ -110,8 +111,8 @@ const Survey1 = ({navigation}: Survey1Props) => {
             }
           />
           <ResuableButton
-            backgroundColor={selected.GH ? COLORS.darkGray : COLORS.white}
-            borderColor={COLORS.lightGray}
+            backgroundColor={selected.GH ? COLORS.primary : COLORS.white}
+            borderColor={selected.GH ? COLORS.primary : COLORS.darkGray}
             borderWidth={1}
             btnText="Ghana (GH)"
             onPress={() => setSelected({...selected, GH: !selected.GH})}
@@ -126,8 +127,8 @@ const Survey1 = ({navigation}: Survey1Props) => {
             }
           />
           <ResuableButton
-            backgroundColor={selected.Zambia ? COLORS.darkGray : COLORS.white}
-            borderColor={COLORS.lightGray}
+            backgroundColor={selected.Zambia ? COLORS.primary : COLORS.white}
+            borderColor={selected.Zambia ? COLORS.primary : COLORS.darkGray}
             borderWidth={1}
             btnText="Zambia"
             onPress={() => setSelected({...selected, Zambia: !selected.Zambia})}
@@ -142,13 +143,13 @@ const Survey1 = ({navigation}: Survey1Props) => {
             }
           />
 
-          <View style={styles.specifyOtherContainer}>
-            <Text style={styles.otherText}>Other (please specify):</Text>
+          <View style={surveyStyles.specifyOtherContainer}>
+            <Text style={surveyStyles.otherText}>Other (please specify):</Text>
             <TextInput
               autoCapitalize="none"
               autoCorrect={false}
               onChangeText={() => {}}
-              style={styles.textInput}
+              style={surveyStyles.textInput}
               width={
                 orientation === 'portrait'
                   ? 200
@@ -162,19 +163,19 @@ const Survey1 = ({navigation}: Survey1Props) => {
         <View
           style={
             orientation === 'portrait'
-              ? styles.backNextBtnContainer
-              : styles.backNextBtnContainerLandscape
+              ? surveyStyles.backNextBtnContainer
+              : surveyStyles.backNextBtnContainerLandscape
           }>
           <ResuableButton
             backgroundColor={COLORS.white}
-            borderColor={COLORS.lightGray}
+            borderColor={COLORS.primary}
             borderWidth={1}
             btnText="Back"
             onPress={() => navigation.navigate('SurveyStart')}
             paddingHorizantal={16}
             paddingVertical={8}
             size={16}
-            textColor={COLORS.black}
+            textColor={COLORS.primary}
             width={orientation === 'portrait' ? 170 : 250}
           />
           <ResuableButton
@@ -196,73 +197,3 @@ const Survey1 = ({navigation}: Survey1Props) => {
 };
 
 export default Survey1;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-  },
-  textInput: {
-    backgroundColor: '#CECECE',
-    borderColor: '#CECECE',
-    borderRadius: 10,
-    borderWidth: 1,
-    height: 38,
-    paddingLeft: 10,
-  },
-  surveyBtnsContainer: {
-    display: 'flex',
-    gap: 10,
-    justifyContent: 'center'
-  },
-  question: {
-    color: COLORS.black,
-    fontFamily: 'Almarai',
-    fontSize: 20,
-    fontWeight: '700',
-    letterSpacing: 0,
-    lineHeight: 24,
-    paddingBottom: 0,
-  },
-  subtitle: {
-    color: COLORS.darkGray,
-    fontFamily: 'Almarai',
-    fontSize: 16,
-    fontWeight: '400',
-    letterSpacing: 0,
-    lineHeight: 19.2,
-    marginBottom: 16,
-    paddingBottom: 0,
-  },
-  specifyOtherContainer: {
-    alignItems: 'center',
-    display: 'flex',
-    gap: 10,
-    flexDirection: 'row',
-    marginTop: 10
-  },
-  otherText: {
-    color: COLORS.black,
-    fontFamily: 'Almarai',
-    fontSize: 14,
-    fontWeight: '400',
-    letterSpacing: 0,
-    lineHeight: 19.2,
-    paddingBottom: 0,
-  },
-  backNextBtnContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 10,
-    justifyContent: 'center',
-    marginTop: 100,
-  },
-  backNextBtnContainerLandscape: {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 10,
-    justifyContent: 'center',
-    marginTop: 70,
-  }
-})
