@@ -54,6 +54,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
           <ResuableButton
             backgroundColor={selected.wildlife ? COLORS.primary : COLORS.white}
             borderColor={selected.wildlife ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Wildlife safari"
             onPress={() =>
@@ -72,6 +73,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
               selected.historical ? COLORS.primary : COLORS.white
             }
             borderColor={selected.historical ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Historical sites"
             onPress={() =>
@@ -88,6 +90,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
           <ResuableButton
             backgroundColor={selected.cultural ? COLORS.primary : COLORS.white}
             borderColor={selected.cultural ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Cultural experiences"
             onPress={() =>
@@ -104,6 +107,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
           <ResuableButton
             backgroundColor={selected.adventure ? COLORS.primary : COLORS.white}
             borderColor={selected.adventure ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Adventure activities (e.g., hiking, rafting)"
             onPress={() =>
@@ -120,6 +124,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
           <ResuableButton
             backgroundColor={selected.food ? COLORS.primary : COLORS.white}
             borderColor={selected.food ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Food and culinary experiences"
             onPress={() => setSelected({...selected, food: !selected.food})}
@@ -138,6 +143,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
             borderColor={
               selected.entertainment ? COLORS.primary : COLORS.darkGray
             }
+            borderRadius={10}
             borderWidth={1}
             btnText="Entertainment (e.g. nightlife, concert)"
             onPress={() =>
@@ -174,6 +180,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
           <ResuableButton
             backgroundColor={COLORS.white}
             borderColor={COLORS.primary}
+            borderRadius={8}
             borderWidth={1}
             btnText="Back"
             onPress={() => navigation.navigate('Survey1')}
@@ -188,6 +195,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
           <ResuableButton
             backgroundColor={COLORS.primary}
             borderColor={COLORS.primary}
+            borderRadius={8}
             borderWidth={1}
             btnText="Next"
             onPress={() => navigation.navigate('Survey3')}

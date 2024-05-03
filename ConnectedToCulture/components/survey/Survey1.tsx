@@ -54,6 +54,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
           <ResuableButton
             backgroundColor={selected.NG ? COLORS.primary : COLORS.white}
             borderColor={selected.NG ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Nigeria (NG)"
             onPress={() => setSelected({...selected, NG: !selected.NG})}
@@ -68,6 +69,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
           <ResuableButton
             backgroundColor={selected.ET ? COLORS.primary : COLORS.white}
             borderColor={selected.ET ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Ethiopia (ET)"
             onPress={() => setSelected({...selected, ET: !selected.ET})}
@@ -82,6 +84,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
           <ResuableButton
             backgroundColor={selected.TG ? COLORS.primary : COLORS.white}
             borderColor={selected.TG ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Togo (TG)"
             onPress={() => setSelected({...selected, TG: !selected.TG})}
@@ -96,6 +99,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
           <ResuableButton
             backgroundColor={selected.ZA ? COLORS.primary : COLORS.white}
             borderColor={selected.ZA ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="South Africa (ZA)"
             onPress={() => setSelected({...selected, ZA: !selected.ZA})}
@@ -110,6 +114,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
           <ResuableButton
             backgroundColor={selected.GH ? COLORS.primary : COLORS.white}
             borderColor={selected.GH ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Ghana (GH)"
             onPress={() => setSelected({...selected, GH: !selected.GH})}
@@ -124,6 +129,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
           <ResuableButton
             backgroundColor={selected.Zambia ? COLORS.primary : COLORS.white}
             borderColor={selected.Zambia ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Zambia"
             onPress={() => setSelected({...selected, Zambia: !selected.Zambia})}
@@ -158,6 +164,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
           <ResuableButton
             backgroundColor={COLORS.white}
             borderColor={COLORS.primary}
+            borderRadius={8}
             borderWidth={1}
             btnText="Back"
             onPress={() => navigation.navigate('SurveyStart')}
@@ -172,6 +179,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
           <ResuableButton
             backgroundColor={COLORS.primary}
             borderColor={COLORS.primary}
+            borderRadius={8}
             borderWidth={1}
             btnText="Next"
             onPress={() => navigation.navigate('Survey2')}

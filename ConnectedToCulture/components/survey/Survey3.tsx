@@ -53,6 +53,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
           <ResuableButton
             backgroundColor={selected.airplane ? COLORS.primary : COLORS.white}
             borderColor={selected.airplane ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Airplane"
             onPress={() =>
@@ -69,6 +70,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
           <ResuableButton
             backgroundColor={selected.public ? COLORS.primary : COLORS.white}
             borderColor={selected.public ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Public transportation (e.g. bus, train)"
             onPress={() => setSelected({...selected, public: !selected.public})}
@@ -83,6 +85,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
           <ResuableButton
             backgroundColor={selected.car ? COLORS.primary : COLORS.white}
             borderColor={selected.car ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Car"
             onPress={() => setSelected({...selected, car: !selected.car})}
@@ -97,6 +100,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
           <ResuableButton
             backgroundColor={selected.bicycle ? COLORS.primary : COLORS.white}
             borderColor={selected.bicycle ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="Bicycle"
             onPress={() =>
@@ -113,6 +117,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
           <ResuableButton
             backgroundColor={selected.notSure ? COLORS.primary : COLORS.white}
             borderColor={selected.notSure ? COLORS.primary : COLORS.darkGray}
+            borderRadius={10}
             borderWidth={1}
             btnText="I'm not sure yet"
             onPress={() =>
@@ -138,6 +143,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
           <ResuableButton
             backgroundColor={COLORS.white}
             borderColor={COLORS.primary}
+            borderRadius={8}
             borderWidth={1}
             btnText="Back"
             onPress={() => navigation.navigate('Survey2')}
@@ -152,6 +158,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
           <ResuableButton
             backgroundColor={COLORS.primary}
             borderColor={COLORS.primary}
+            borderRadius={8}
             borderWidth={1}
             btnText="Next"
             onPress={() => navigation.navigate('Survey4')}

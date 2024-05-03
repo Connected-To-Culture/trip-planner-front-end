@@ -25,6 +25,7 @@ const SurveyStart = ({navigation}: SurveyStartProps) => {
         <ResuableButton
           backgroundColor={COLORS.primary}
           borderColor={COLORS.primary}
+          borderRadius={8}
           borderWidth={1}
           btnText="Start"
           onPress={() => navigation.navigate('Survey1')}
