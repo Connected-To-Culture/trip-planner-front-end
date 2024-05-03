@@ -85,8 +85,9 @@ const surveyStyles = StyleSheet.create({
   surveyBtnsContainer: {
     display: 'flex',
     flexDirection: 'column',
-    gap: 10,
+    gap: 12,
     justifyContent: 'center',
+    alignItems: 'center'
   },
   textContainer: {
     alignItems: 'center',
