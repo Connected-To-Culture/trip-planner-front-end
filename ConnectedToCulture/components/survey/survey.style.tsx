@@ -6,24 +6,9 @@ const {height, width} = Dimensions.get('window');
 
 const surveyStyles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     flex: 1,
     justifyContent: 'center',
     padding: 20,
-  },
-  textContainer: {
-    alignItems: 'center',
-    marginBottom: 20,
-    width: 320
-  },
-  title: {
-    color: COLORS.primary,
-    fontFamily: 'Almarai',
-    fontSize: 24,
-    fontWeight: '700',
-    letterSpacing: 0,
-    lineHeight: 28.8,
-    paddingBottom: 0,
   },
   description: {
     color: COLORS.darkGray,
@@ -47,6 +32,21 @@ const surveyStyles = StyleSheet.create({
     paddingBottom: 0,
     textAlign: 'center',
   },
+  textContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
+    width: 320
+  },
+  title: {
+    color: COLORS.primary,
+    fontFamily: 'Almarai',
+    fontSize: 24,
+    fontWeight: '700',
+    letterSpacing: 0,
+    lineHeight: 28.8,
+    paddingBottom: 0,
+  },
+
 });
 
 export {surveyStyles as default, height, width};
