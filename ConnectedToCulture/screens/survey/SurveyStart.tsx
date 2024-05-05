@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {NavigationProp} from '@react-navigation/native';
-import ResuableButton from '../reusable/reusableButton/ReusableButton';
+import ResuableButton from '../../components/reusable/reusableButton/ReusableButton';
 import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
 

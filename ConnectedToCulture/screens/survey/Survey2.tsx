@@ -1,25 +1,27 @@
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, TextInput, ScrollView} from 'react-native';
 import {Dimensions} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {NavigationProp} from '@react-navigation/native';
-import ResuableButton from '../reusable/reusableButton/ReusableButton';
+import ResuableButton from '../../components/reusable/reusableButton/ReusableButton';
 import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
 
-type Survey3Props = {
+type Survey2Props = {
   navigation: NavigationProp<any>;
 };
 
-const Survey3 = ({navigation}: Survey3Props) => {
+const Survey2 = ({navigation}: Survey2Props) => {
   const initalSelectedValue = {
-    airplane: false,
-    public: false,
-    car: false,
-    bicycle: false,
-    notSure: false,
+    wildlife: false,
+    historical: false,
+    cultural: false,
+    adventure: false,
+    food: false,
+    entertainment: false
   }
 
   const [selected, setSelected] = useState(initalSelectedValue);
+  const [textInput, setTextInput] = useState('')
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
@@ -48,111 +50,149 @@ const Survey3 = ({navigation}: Survey3Props) => {
         showsVerticalScrollIndicator={false}>
         <View style={surveyStyles.subContainer}>
           <View>
-            {/* <Text style={[surveyStyles.question, {width: curWidth * 0.9}]}> */}
             <Text style={surveyStyles.question}>
-              Q3. What are your preferred modes of transportation during travel?
+              Q2. What are your main interests when traveling to Africa?
             </Text>
             <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
                 backgroundColor={
-                  selected.airplane ? COLORS.primary : COLORS.white
+                  selected.wildlife ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.airplane ? COLORS.primary : COLORS.darkGray
+                  selected.wildlife ? COLORS.primary : COLORS.darkGray
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Airplane"
+                btnText="Wildlife safari"
                 onPress={() =>
-                  setSelected({...selected, airplane: !selected.airplane})
+                  setSelected({...selected, wildlife: !selected.wildlife})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.airplane ? COLORS.white : COLORS.black}
+                textColor={selected.wildlife ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
               <ResuableButton
                 backgroundColor={
-                  selected.public ? COLORS.primary : COLORS.white
+                  selected.historical ? COLORS.primary : COLORS.white
                 }
-                borderColor={selected.public ? COLORS.primary : COLORS.darkGray}
+                borderColor={
+                  selected.historical ? COLORS.primary : COLORS.darkGray
+                }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Public transportation (e.g. bus, train)"
+                btnText="Historical sites"
                 onPress={() =>
-                  setSelected({...selected, public: !selected.public})
+                  setSelected({...selected, historical: !selected.historical})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.public ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                backgroundColor={selected.car ? COLORS.primary : COLORS.white}
-                borderColor={selected.car ? COLORS.primary : COLORS.darkGray}
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Car"
-                onPress={() => setSelected({...selected, car: !selected.car})}
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.car ? COLORS.white : COLORS.black}
+                textColor={selected.historical ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
               <ResuableButton
                 backgroundColor={
-                  selected.bicycle ? COLORS.primary : COLORS.white
+                  selected.cultural ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.bicycle ? COLORS.primary : COLORS.darkGray
+                  selected.cultural ? COLORS.primary : COLORS.darkGray
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Bicycle"
+                btnText="Cultural experiences"
                 onPress={() =>
-                  setSelected({...selected, bicycle: !selected.bicycle})
+                  setSelected({...selected, cultural: !selected.cultural})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.bicycle ? COLORS.white : COLORS.black}
+                textColor={selected.cultural ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
               <ResuableButton
                 backgroundColor={
-                  selected.notSure ? COLORS.primary : COLORS.white
+                  selected.adventure ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.notSure ? COLORS.primary : COLORS.darkGray
+                  selected.adventure ? COLORS.primary : COLORS.darkGray
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="I'm not sure yet"
+                btnText="Adventure activities (e.g., hiking, rafting)"
                 onPress={() =>
-                  setSelected({...selected, notSure: !selected.notSure})
+                  setSelected({...selected, adventure: !selected.adventure})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.notSure ? COLORS.white : COLORS.black}
+                textColor={selected.adventure ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                backgroundColor={selected.food ? COLORS.primary : COLORS.white}
+                borderColor={selected.food ? COLORS.primary : COLORS.darkGray}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Food and culinary experiences"
+                onPress={() => setSelected({...selected, food: !selected.food})}
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.food ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                backgroundColor={
+                  selected.entertainment ? COLORS.primary : COLORS.white
+                }
+                borderColor={
+                  selected.entertainment ? COLORS.primary : COLORS.darkGray
+                }
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Entertainment (e.g. nightlife, concert)"
+                onPress={() =>
+                  setSelected({
+                    ...selected,
+                    entertainment: !selected.entertainment
+                  })
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.entertainment ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
 
+              <View style={surveyStyles.specifyOtherContainer}>
+                <Text style={surveyStyles.otherText}>
+                  Other (please specify):
+                </Text>
+                <TextInput
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  onChangeText={text => setTextInput(text)}
+                  style={surveyStyles.textInput}
+                  width={curWidth * 0.5}
+                  value={textInput}
+                />
+              </View>
             </View>
           </View>
 
@@ -168,7 +208,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
               borderRadius={8}
               borderWidth={1}
               btnText="Back"
-              onPress={() => navigation.navigate('Survey2')}
+              onPress={() => navigation.navigate('Survey1')}
               paddingHorizantal={16}
               paddingVertical={8}
               size={16}
@@ -183,7 +223,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
               borderRadius={8}
               borderWidth={1}
               btnText="Next"
-              onPress={() => navigation.navigate('Survey4')}
+              onPress={() => navigation.navigate('Survey3')}
               paddingHorizantal={16}
               paddingVertical={8}
               size={16}
@@ -199,4 +239,4 @@ const Survey3 = ({navigation}: Survey3Props) => {
   );
 };
 
-export default Survey3;
+export default Survey2;

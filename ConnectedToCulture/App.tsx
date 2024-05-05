@@ -15,7 +15,7 @@ import { CreateAccount, Welcome,Signin,TermsAndConditions,ResetPassword} from '.
 import { StatusBar,StyleSheet} from 'react-native';
 import BottomTabNavigation from './navigation/BottomTabNavigation';
 import COLORS from './constants/theme';
-import SurveyNavigator from './screens/survey/SurveyNavigator';
+import SurveyNavigator from './components/survey/SurveyNavigator';
 
 function App(): React.JSX.Element {
  // Set the status bar background color

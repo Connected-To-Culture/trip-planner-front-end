@@ -1,10 +1,11 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import SurveyStart from '../../components/survey/SurveyStart';
-import Survey1 from '../../components/survey/Survey1';
-import Survey2 from '../../components/survey/Survey2';
-import Survey3 from '../../components/survey/Survey3';
+import SurveyStart from '../../screens/survey/SurveyStart';
+import Survey1 from '../../screens/survey/Survey1';
+import Survey2 from '../../screens/survey/Survey2';
+import Survey3 from '../../screens/survey/Survey3';
 
 const Stack = createNativeStackNavigator();
 
