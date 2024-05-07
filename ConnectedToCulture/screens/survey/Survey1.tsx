@@ -1,27 +1,18 @@
 import {View, Text, TextInput, ScrollView} from 'react-native';
 import {Dimensions} from 'react-native';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {NavigationProp} from '@react-navigation/native';
 import ResuableButton from '../../components/reusable/reusableButton/ReusableButton';
 import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
+import {SurveyDataContext} from '../../context/surveyData';
 
 type Survey1Props = {
   navigation: NavigationProp<any>;
 };
 
 const Survey1 = ({navigation}: Survey1Props) => {
-  const initalSelectedValue = {
-    NG: false,
-    ET: false,
-    TG: false,
-    ZA: false,
-    GH: false,
-    Zambia: false
-  }
-
-  const [selected, setSelected] = useState(initalSelectedValue);
-  const [textInput, setTextInput] = useState('')
+  const {selected, setSelected} = useContext(SurveyDataContext);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
@@ -158,10 +149,12 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 <TextInput
                   autoCapitalize="none"
                   autoCorrect={false}
-                  onChangeText={text => setTextInput(text)}
+                  onChangeText={text =>
+                    setSelected({...selected, q1Text: text})
+                  }
                   style={surveyStyles.textInput}
                   width={curWidth * 0.5}
-                  value={textInput}
+                  value={selected.q1Text}
                 />
               </View>
             </View>

@@ -1,25 +1,18 @@
 import {View, Text, ScrollView} from 'react-native';
 import {Dimensions} from 'react-native';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {NavigationProp} from '@react-navigation/native';
 import ResuableButton from '../../components/reusable/reusableButton/ReusableButton';
 import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
+import {SurveyDataContext} from '../../context/surveyData';
 
 type Survey3Props = {
   navigation: NavigationProp<any>;
 };
 
 const Survey3 = ({navigation}: Survey3Props) => {
-  const initalSelectedValue = {
-    airplane: false,
-    public: false,
-    car: false,
-    bicycle: false,
-    notSure: false,
-  }
-
-  const [selected, setSelected] = useState(initalSelectedValue);
+  const {selected, setSelected} = useContext(SurveyDataContext);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
