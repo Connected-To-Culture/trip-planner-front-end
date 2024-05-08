@@ -48,6 +48,13 @@ const surveyStyles = StyleSheet.create({
     paddingBottom: 0,
     textAlign: 'center',
   },
+  modalContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    marginBottom: 25,
+    marginTop: 10,
+  },
   otherText: {
     color: COLORS.black,
     fontFamily: 'Almarai',
