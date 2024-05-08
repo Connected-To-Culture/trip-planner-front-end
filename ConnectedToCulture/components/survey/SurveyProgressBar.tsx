@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
-type ProgressBarProps = {
+type SurveyProgressBarProps = {
   progress: number;
 };
 
-const ProgressBar = ({progress}: ProgressBarProps) => {
+const SurveyProgressBar = ({progress}: SurveyProgressBarProps) => {
   return (
     <View style={styles.container}>
       <View style={[styles.progressBar, {width: `${progress}%`}]} />
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProgressBar;
+export default SurveyProgressBar;
