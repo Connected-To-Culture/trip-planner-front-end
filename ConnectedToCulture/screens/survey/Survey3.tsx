@@ -17,18 +17,16 @@ const Survey3 = ({navigation}: Survey3Props) => {
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
       ? 'portrait'
-      : 'landscape'
+      : 'landscape',
   );
 
   useEffect(() => {
     const onChange = () => {
       const {height, width} = Dimensions.get('window');
       setOrientation(height > width ? 'portrait' : 'landscape');
-      setCurWidth(width)
+      setCurWidth(width);
     };
-
     Dimensions.addEventListener('change', onChange);
-
   }, []);
 
   return (
@@ -36,7 +34,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
       <ScrollView
         contentContainerStyle={[
           surveyStyles.scrollViewStyles,
-          {flex: orientation === 'landscape' ? undefined : 1}
+          {flex: orientation === 'landscape' ? undefined : 1},
         ]}
         showsVerticalScrollIndicator={false}>
         <View style={surveyStyles.subContainer}>
@@ -145,7 +143,6 @@ const Survey3 = ({navigation}: Survey3Props) => {
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
-
             </View>
           </View>
 

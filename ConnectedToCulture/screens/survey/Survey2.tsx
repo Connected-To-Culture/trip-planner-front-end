@@ -17,18 +17,16 @@ const Survey2 = ({navigation}: Survey2Props) => {
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
       ? 'portrait'
-      : 'landscape'
+      : 'landscape',
   );
 
   useEffect(() => {
     const onChange = () => {
       const {height, width} = Dimensions.get('window');
       setOrientation(height > width ? 'portrait' : 'landscape');
-      setCurWidth(width)
+      setCurWidth(width);
     };
-
     Dimensions.addEventListener('change', onChange);
-
   }, []);
 
   return (
@@ -36,7 +34,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
       <ScrollView
         contentContainerStyle={[
           surveyStyles.scrollViewStyles,
-          {flex: orientation === 'landscape' ? undefined : 1}
+          {flex: orientation === 'landscape' ? undefined : 1},
         ]}
         showsVerticalScrollIndicator={false}>
         <View style={surveyStyles.subContainer}>
@@ -159,7 +157,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    entertainment: !selected.entertainment
+                    entertainment: !selected.entertainment,
                   })
                 }
                 paddingHorizantal={24}

@@ -27,7 +27,7 @@ type SelectedState = {
 type SurveyDataContextType = {
   selected: SelectedState;
   setSelected: Dispatch<SetStateAction<SelectedState>>;
-}
+};
 
 // Create the context
 const SurveyDataContext = React.createContext<SurveyDataContextType>({
@@ -58,12 +58,11 @@ const SurveyDataContext = React.createContext<SurveyDataContextType>({
 // Define the props type for SurveyDataProviderWrapper
 type SurveyDataProviderWrapperProps = {
   children: React.ReactNode;
-}
+};
 
 const SurveyDataProviderWrapper = ({
   children,
 }: SurveyDataProviderWrapperProps) => {
-
   const [selected, setSelected] = useState<SelectedState>({
     NG: false,
     ET: false,
@@ -91,6 +90,6 @@ const SurveyDataProviderWrapper = ({
       {children}
     </SurveyDataContext.Provider>
   );
-}
+};
 
 export {SurveyDataContext, SurveyDataProviderWrapper};

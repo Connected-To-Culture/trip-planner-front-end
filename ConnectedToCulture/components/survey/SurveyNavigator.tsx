@@ -1,6 +1,5 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import SurveyStart from '../../screens/survey/SurveyStart';
 import Survey1 from '../../screens/survey/Survey1';
