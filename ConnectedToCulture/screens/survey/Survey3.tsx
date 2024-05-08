@@ -6,6 +6,7 @@ import ResuableButton from '../../components/reusable/reusableButton/ReusableBut
 import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
 import {SurveyDataContext} from '../../context/surveyData';
+import SurveyProgressBar from '../../components/survey/SurveyProgressBar';
 
 type Survey3Props = {
   navigation: NavigationProp<any>;
@@ -39,7 +40,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
         showsVerticalScrollIndicator={false}>
         <View style={surveyStyles.subContainer}>
           <View>
-            {/* <Text style={[surveyStyles.question, {width: curWidth * 0.9}]}> */}
+            <SurveyProgressBar progress={27} />
             <Text style={surveyStyles.question}>
               Q3. What are your preferred modes of transportation during travel?
             </Text>

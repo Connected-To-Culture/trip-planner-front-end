@@ -6,6 +6,7 @@ import ResuableButton from '../../components/reusable/reusableButton/ReusableBut
 import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
 import {SurveyDataContext} from '../../context/surveyData';
+import SurveyProgressBar from '../../components/survey/SurveyProgressBar';
 
 type Survey2Props = {
   navigation: NavigationProp<any>;
@@ -39,6 +40,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
         showsVerticalScrollIndicator={false}>
         <View style={surveyStyles.subContainer}>
           <View>
+            <SurveyProgressBar progress={18} />
             <Text style={surveyStyles.question}>
               Q2. What are your main interests when traveling to Africa?
             </Text>
