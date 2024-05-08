@@ -7,6 +7,7 @@ import NoTripPlan from './home/NoTripPlan'
 import RecentTripPlan from './home/RecentTripPlan'
 import CountriesToExplore from './home/CountriesToExplore'
 import Recommendations from './home/Recommendations'
+import GoBack from './navigation/GoBack'
 
 export{
     LoginButtons,
@@ -17,5 +18,6 @@ export{
     NoTripPlan,
     RecentTripPlan,
     CountriesToExplore,
-    Recommendations
+    Recommendations,
+    GoBack
 }

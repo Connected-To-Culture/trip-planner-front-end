@@ -71,7 +71,7 @@ interface Props {
             width={width * 0.25}
             paddingHorizantal={15}
             paddingVertical={5}
-            onPress={() => navigation.navigate('Welcome')}
+            onPress={() => navigation.navigate('CountryDashboard')}
           />
         </View>
       </View>

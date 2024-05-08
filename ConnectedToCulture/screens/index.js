@@ -8,6 +8,7 @@ import Profile from "./profile/Profile";
 import Plan from "./plan/Plan";
 import TermsAndConditions from "./authentication/TermsAndConditions";
 import ResetPassword from "./authentication/ResetPassword";
+import CountryDashboard from "./explore/CountryDashboard";
 export{
     
     Signin,
@@ -18,5 +19,6 @@ export{
     Profile,
     Plan,
     TermsAndConditions,
-    ResetPassword
+    ResetPassword,
+    CountryDashboard
 }
