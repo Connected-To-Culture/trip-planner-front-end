@@ -1,39 +1,64 @@
-import { View, Text,Image, ScrollView } from 'react-native'
-import React from 'react'
-import homeStyles from './home.style'
+import React from 'react';
+import { View, Text, FlatList } from 'react-native';
+import homeStyles from './home.style';
 import globalStylesAndRowWithSpace from '../../constants/global.style';
-import { CountriesToExplore, HeightSpacer, NoTripPlan, RecentTripPlan, Recommendations } from '../../components';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { CountriesToExplore, HeightSpacer, NoTripPlan, Recommendations } from '../../components';
 
-
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   const { globalStyles, rowWithSpace } = globalStylesAndRowWithSpace;
-  return (
-    <View style={{flex: 1}}>
-    <ScrollView>
-  <View style={homeStyles.container}>
-    <View style={[rowWithSpace('space-between'),homeStyles.header]}>
-      <Text style={homeStyles.headerText}>Hi,MK</Text>
-      <Image
-        style={homeStyles.avatar}
-        source={require('../../assets/images/photo/avatar.jpg')}
-        resizeMode='cover'
-      />
-    </View>
-    <View style={homeStyles.components}>
-      {/* If user is new show NoTripPlan*/}
-      <NoTripPlan navigation={navigation}/>
-      {/* If user is not new and filled the survey  show RecentTripPlan*/}
-      {/* <RecentTripPlan/> */}
-      {/* <HeightSpacer height={20}/> */}
-      <CountriesToExplore navigation={navigation}/>
-      <HeightSpacer height={20}/>
-      <Recommendations navigation={navigation}/>
 
-    </View>
-  </View>
-</ScrollView>
-</View>
-  )
+  // Dummy data for FlatList
+  const data = [
+    { id: '1', type: 'NoTripPlan' },
+    { id: '2', type: 'CountriesToExplore' },
+    { id: '3', type: 'Recommendations' },
+    // Add more data items as needed
+  ];
+
+  // Render item function for FlatList
+  const renderItem = ({ item }) => {
+    switch(item.type) {
+      case 'NoTripPlan':
+        return (
+          <>
+            <NoTripPlan navigation={navigation} />
+            <HeightSpacer height={20} />
+          </>
+        );
+      case 'CountriesToExplore':
+        return (
+          <>
+            <CountriesToExplore navigation={navigation} />
+            <HeightSpacer height={20} />
+          </>
+        );
+      case 'Recommendations':
+        return (
+          <>
+            <Recommendations navigation={navigation} />
+            <HeightSpacer height={20} />
+          </>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={homeStyles.container}>
+        <View style={[rowWithSpace('space-between'), homeStyles.header]}>
+          <Text style={homeStyles.headerText}>Hi, MK</Text>
+        </View>
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
+      </View>
+    </SafeAreaView>
+  );
 }
 
-export default Home
+export default Home;

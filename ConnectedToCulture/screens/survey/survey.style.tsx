@@ -10,7 +10,7 @@ const surveyStyles = StyleSheet.create({
     flexDirection: 'row',
     gap: 10,
     justifyContent: 'center',
-    marginBottom: 10
+    marginBottom: 10,
   },
   backNextBtnContainerLandscape: {
     display: 'flex',
@@ -74,13 +74,13 @@ const surveyStyles = StyleSheet.create({
     display: 'flex',
     gap: 10,
     flexDirection: 'row',
-    marginTop: 10
+    marginTop: 10,
   },
   subContainer: {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   subtitle: {
     color: COLORS.darkGray,
@@ -97,12 +97,12 @@ const surveyStyles = StyleSheet.create({
     flexDirection: 'column',
     gap: 12,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   textContainer: {
     alignItems: 'center',
     marginBottom: 20,
-    width: 320
+    width: 320,
   },
   textInput: {
     backgroundColor: '#CECECE',

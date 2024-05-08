@@ -10,7 +10,6 @@ type SurveyStartProps = {
 };
 
 const SurveyStart = ({navigation}: SurveyStartProps) => {
-
   return (
     <View style={surveyStyles.container}>
       <View style={{alignItems: 'center'}}>

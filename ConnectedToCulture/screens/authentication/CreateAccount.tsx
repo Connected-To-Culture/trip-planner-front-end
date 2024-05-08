@@ -14,6 +14,8 @@ const windowHeight = Dimensions.get('window').height;
 interface FormModel{
     userName:string,
     email:string,
+    phone:string,
+    zipCode:string,
     password:string,
     verifyPassword:string,
 }
@@ -24,6 +26,14 @@ const validationSchema=Yup.object().shape({
     email:Yup.string()
     .email('Provide a valid email')
     .required('Required'),
+    phone:Yup.string()
+    .matches(/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/, 'Phone number is not valid')
+    .required('Required'),
+    zipCode:Yup.string()
+    .required()
+    .matches(/^[0-9]+$/, "Must be only digits")
+    .min(5, 'Must be exactly 5 digits')
+    .max(5, 'Must be exactly 5 digits'),
     password:Yup.string()
     .min(8, 'Password must be 8 characters long')
     .matches(/[0-9]/, 'Password requires a number')
@@ -63,6 +73,8 @@ const CreateAccount = ({navigation}: {navigation: any}) => {
         initialValues={{
             userName:'',
             email:'',
+            phone:'',
+            zipCode:'',
             password:'',
             verifyPassword:'',
 
@@ -107,6 +119,37 @@ const CreateAccount = ({navigation}: {navigation: any}) => {
               <Text style={styles.errorMessage}>{errors.email}</Text>
             )}
         </View>
+
+        <View style={styles.wrapper}>
+    
+        <TextInput style={styles.inputWrapper} placeholder='Phone Number' placeholderTextColor={'#79796E'}
+            onFocus={()=>setFieldTouched('phone')}
+            onBlur={()=>setFieldTouched('phone',true)}
+            value={values.phone}
+            onChangeText={handleChange('phone')}
+            autoCapitalize='none'
+            autoCorrect={false}/>    
+        
+        {touched.phone && errors.phone && (
+              <Text style={styles.errorMessage}>{errors.phone}</Text>
+            )}
+        </View>
+
+        <View style={styles.wrapper}>
+    
+        <TextInput style={styles.inputWrapper} placeholder='Home Zip Code' placeholderTextColor={'#79796E'}
+            onFocus={()=>setFieldTouched('zipCode')}
+            onBlur={()=>setFieldTouched('zipCode',true)}
+            value={values.zipCode}
+            onChangeText={handleChange('zipCode')}
+            autoCapitalize='none'
+            autoCorrect={false}/>    
+        
+        {touched.zipCode && errors.zipCode && (
+              <Text style={styles.errorMessage}>{errors.zipCode}</Text>
+            )}
+        </View>
+        
         
             <View style={styles.wrapper}>
                 <TextInput style={styles.inputWrapper} placeholder='Password' placeholderTextColor={'#79796E'}

@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white,
         alignItems: 'flex-start',
         justifyContent: 'center',
+        minHeight: height * 0.2,
                     
     },
     NoTripCompanentContainer:{
@@ -22,6 +23,8 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white,
         alignItems: 'center',
         justifyContent: 'center',
+        minHeight: height * 0.2,
+        
        
     },
     TextContainer:{
@@ -32,7 +35,7 @@ const styles = StyleSheet.create({
     imageContainer:{
         justifyContent: 'center',
         alignItems: 'center',
-        width:width*0.4,
+        width:width*0.35,
         height:height*0.1,
     },
     noTripPlanText:{
@@ -211,7 +214,10 @@ const styles = StyleSheet.create({
         
     },
     
-
+    contentContainerFlatListStyle: {
+        
+        height: "100%",
+      },
    
 
 })

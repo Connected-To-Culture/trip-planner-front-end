@@ -12,7 +12,11 @@ const COLORS = {
     darkWhite:'#3E3E3A',
     lightGray:'#D8D8D6',
     gray:'#C7C7C4',
-    primary: '#0E7070'
+    primary:'#0E7070',
+    primaryDark:'#022435',
+    primaryLight:'64D4C0',
+    utilityYellow:'#FEEFC6',
+    black400:'#79796E',
 
 
 

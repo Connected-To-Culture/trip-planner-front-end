@@ -1,14 +1,15 @@
-import { View, Text, Image, FlatList } from 'react-native'
+import { View, Text, Image, FlatList, VirtualizedList } from 'react-native'
 import React, { useState } from 'react'
 import styles from './home.style'
 
 import { Dimensions } from "react-native";
 import HeightSpacer from '../reusable/HeightSpacer';
-import { ReusableButton } from '..';
+import { Recommendations, ReusableButton } from '..';
 import COLORS from '../../constants/theme';
 import { NavigationProp, RouteProp } from '@react-navigation/native';
 const { width, height } = Dimensions.get("window");
 interface SlideItem {
+    id: number| string;
     title: string;
     image: any; 
   }
@@ -21,18 +22,36 @@ interface Props {
     
   
   const slides:SlideItem[]= [
-    {
+    { 
+      id:1,
       title: 'South Africa',
       image: require('../../assets/images/country/southAfrica/sa.jpg'),
     },
     {
+      id:2,
       title: 'Ghana',
       image:require('../../assets/images/country/ghana/yoel-winkler-zCAh6tOWFt8-unsplash.jpg'),
     },
     {
+      id:3,
       title: 'Tanzania',
       image: require('../../assets/images/country/tanzania/zanzibar.jpg'),
-    },
+   },
+   { 
+    id:4,
+    title: 'South Africa',
+    image: require('../../assets/images/country/southAfrica/sa.jpg'),
+  },
+  {
+    id:5,
+    title: 'Ghana',
+    image:require('../../assets/images/country/ghana/yoel-winkler-zCAh6tOWFt8-unsplash.jpg'),
+  },
+  {
+    id:6,
+    title: 'Tanzania',
+    image: require('../../assets/images/country/tanzania/zanzibar.jpg'),
+ },
   ];
 
   // renderItem fonction
@@ -80,10 +99,11 @@ const [activeIndex, setActiveIndex] = useState(0);
    <FlatList
         data={slides}
         renderItem={(props) => renderItem({ ...props, navigation })}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={(item:SlideItem) => item.id.toString()}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
+       
         onScroll={(event) => {
           const { contentOffset } = event.nativeEvent;
           const index = Math.round(contentOffset.x / width);

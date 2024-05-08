@@ -8,13 +8,14 @@ const { width, height } = Dimensions.get("window");
 const homeStyles=StyleSheet.create({
   
     container: {
-       
+        
+        backgroundColor:COLORS.white,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:COLORS.white,
         padding:15,
         paddingTop:0,
-        paddingBottom:height*0.05
+        paddingBottom:height*0.05,
+        
     },
     header:{
         width:'100%',
