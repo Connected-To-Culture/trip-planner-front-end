@@ -48,7 +48,7 @@ const surveyStyles = StyleSheet.create({
     paddingBottom: 0,
     textAlign: 'center',
   },
-  modalContainer: {
+  modalXContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',

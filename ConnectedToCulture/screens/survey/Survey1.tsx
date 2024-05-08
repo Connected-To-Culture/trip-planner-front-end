@@ -1,4 +1,4 @@
-import {View, Text, TextInput, ScrollView} from 'react-native';
+import {View, Text, TextInput, ScrollView, Pressable} from 'react-native';
 import {Dimensions} from 'react-native';
 import React, {useState, useEffect, useContext} from 'react';
 import {NavigationProp} from '@react-navigation/native';
@@ -7,6 +7,9 @@ import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
 import {SurveyDataContext} from '../../context/surveyData';
 import SurveyProgressBar from '../../components/survey/SurveyProgressBar';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
+import {SurveyModalContext} from '../../context/surveyModal';
 
 type Survey1Props = {
   navigation: NavigationProp<any>;
@@ -14,6 +17,7 @@ type Survey1Props = {
 
 const Survey1 = ({navigation}: Survey1Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
+  const {setModalOpen} = useContext(SurveyModalContext);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
@@ -40,6 +44,15 @@ const Survey1 = ({navigation}: Survey1Props) => {
         showsVerticalScrollIndicator={false}>
         <View style={surveyStyles.subContainer}>
           <View>
+            <Pressable
+              style={surveyStyles.modalXContainer}
+              onPress={() => setModalOpen(true)}>
+              <FontAwesomeIcon
+                size={28}
+                icon={faXmark}
+                color={COLORS.primary}
+              />
+            </Pressable>
             <SurveyProgressBar progress={9} />
             <Text style={surveyStyles.question}>
               Q1. Which African countries are you interested in visiting?
