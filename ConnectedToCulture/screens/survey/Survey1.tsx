@@ -6,6 +6,7 @@ import ResuableButton from '../../components/reusable/reusableButton/ReusableBut
 import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
 import {SurveyDataContext} from '../../context/surveyData';
+import ProgressBar from '../../components/survey/SurveyProgressBar';
 
 type Survey1Props = {
   navigation: NavigationProp<any>;
@@ -39,6 +40,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
         showsVerticalScrollIndicator={false}>
         <View style={surveyStyles.subContainer}>
           <View>
+            <ProgressBar progress={9} />
             <Text style={surveyStyles.question}>
               Q1. Which African countries are you interested in visiting?
             </Text>
