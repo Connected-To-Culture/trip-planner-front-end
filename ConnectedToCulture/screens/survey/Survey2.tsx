@@ -48,6 +48,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
+                alignItems="left"
                 backgroundColor={
                   selected.wildlife ? COLORS.primary : COLORS.white
                 }
@@ -69,6 +70,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={
                   selected.historical ? COLORS.primary : COLORS.white
                 }
@@ -90,6 +92,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={
                   selected.cultural ? COLORS.primary : COLORS.white
                 }
@@ -111,6 +114,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={
                   selected.adventure ? COLORS.primary : COLORS.white
                 }
@@ -132,6 +136,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={selected.food ? COLORS.primary : COLORS.white}
                 borderColor={selected.food ? COLORS.primary : COLORS.darkGray}
                 borderRadius={10}
@@ -147,6 +152,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={
                   selected.entertainment ? COLORS.primary : COLORS.white
                 }

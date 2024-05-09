@@ -61,6 +61,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
+                alignItems="left"
                 backgroundColor={selected.NG ? COLORS.primary : COLORS.white}
                 borderColor={selected.NG ? COLORS.primary : COLORS.darkGray}
                 borderRadius={10}
@@ -76,6 +77,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={selected.ET ? COLORS.primary : COLORS.white}
                 borderColor={selected.ET ? COLORS.primary : COLORS.darkGray}
                 borderRadius={10}
@@ -91,6 +93,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={selected.TG ? COLORS.primary : COLORS.white}
                 borderColor={selected.TG ? COLORS.primary : COLORS.darkGray}
                 borderRadius={10}
@@ -106,6 +109,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={selected.ZA ? COLORS.primary : COLORS.white}
                 borderColor={selected.ZA ? COLORS.primary : COLORS.darkGray}
                 borderRadius={10}
@@ -121,6 +125,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={selected.GH ? COLORS.primary : COLORS.white}
                 borderColor={selected.GH ? COLORS.primary : COLORS.darkGray}
                 borderRadius={10}
@@ -136,6 +141,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
+                alignItems="left"
                 backgroundColor={
                   selected.Zambia ? COLORS.primary : COLORS.white
                 }
