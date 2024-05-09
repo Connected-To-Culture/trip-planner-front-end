@@ -1,4 +1,4 @@
-import {View, Text, Pressable} from 'react-native';
+import {View, Text, Pressable, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import {NavigationProp} from '@react-navigation/native';
 import ResuableButton from '../../components/reusable/reusableButton/ReusableButton';
@@ -16,16 +16,13 @@ const SurveyStart = ({navigation}: SurveyStartProps) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <View
-      style={[
-        surveyStyles.container,
-        surveyStyles.surveyStartExtraContainerStyles,
-      ]}>
+      style={[surveyStyles.container, styles.surveyStartExtraContainerStyles]}>
       <Pressable
         style={surveyStyles.modalXContainer}
         onPress={() => setModalOpen(true)}>
         <FontAwesomeIcon size={28} icon={faXmark} color={COLORS.primary} />
       </Pressable>
-      <View style={surveyStyles.surveyStartContentContainer}>
+      <View style={styles.surveyStartContentContainer}>
         <View style={{alignItems: 'center'}}>
           <View style={surveyStyles.textContainer}>
             <Text style={surveyStyles.title}>Welcome to C2C survey!</Text>
@@ -56,5 +53,20 @@ const SurveyStart = ({navigation}: SurveyStartProps) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  surveyStartExtraContainerStyles: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  surveyStartContentContainer: {
+    alignItems: 'center',
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+})
 
 export default SurveyStart;
