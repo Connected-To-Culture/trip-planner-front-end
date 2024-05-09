@@ -1,40 +1,58 @@
-import {View, Text} from 'react-native';
-import React from 'react';
+import {View, Text, Pressable} from 'react-native';
+import React, {useState} from 'react';
 import {NavigationProp} from '@react-navigation/native';
 import ResuableButton from '../../components/reusable/reusableButton/ReusableButton';
 import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
+import SurveyModal from '../../components/survey/SurveyModal';
 
 type SurveyStartProps = {
   navigation: NavigationProp<any>;
 };
 
 const SurveyStart = ({navigation}: SurveyStartProps) => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
-    <View style={surveyStyles.container}>
-      <View style={{alignItems: 'center'}}>
-        <View style={surveyStyles.textContainer}>
-          <Text style={surveyStyles.title}>Welcome to C2C survey!</Text>
-          <Text style={surveyStyles.description}>
-            Make smarter trip plans simply by answering the following 10
-            questions!
-          </Text>
-          <Text style={surveyStyles.estimatedTime}>Estimated time: 3 min</Text>
+    <View
+      style={[
+        surveyStyles.container,
+        surveyStyles.surveyStartExtraContainerStyles,
+      ]}>
+      <Pressable
+        style={surveyStyles.modalXContainer}
+        onPress={() => setModalOpen(true)}>
+        <FontAwesomeIcon size={28} icon={faXmark} color={COLORS.primary} />
+      </Pressable>
+      <View style={surveyStyles.surveyStartContentContainer}>
+        <View style={{alignItems: 'center'}}>
+          <View style={surveyStyles.textContainer}>
+            <Text style={surveyStyles.title}>Welcome to C2C survey!</Text>
+            <Text style={surveyStyles.description}>
+              Make smarter trip plans simply by answering the following 10
+              questions!
+            </Text>
+            <Text style={surveyStyles.estimatedTime}>
+              Estimated time: 3 min
+            </Text>
+          </View>
+          <ResuableButton
+            backgroundColor={COLORS.primary}
+            borderColor={COLORS.primary}
+            borderRadius={8}
+            borderWidth={1}
+            btnText="Start"
+            onPress={() => navigation.navigate('Survey1')}
+            paddingHorizantal={32}
+            paddingVertical={8}
+            size={16}
+            textColor={COLORS.white}
+            width={187}
+          />
         </View>
-        <ResuableButton
-          backgroundColor={COLORS.primary}
-          borderColor={COLORS.primary}
-          borderRadius={8}
-          borderWidth={1}
-          btnText="Start"
-          onPress={() => navigation.navigate('Survey1')}
-          paddingHorizantal={32}
-          paddingVertical={8}
-          size={16}
-          textColor={COLORS.white}
-          width={187}
-        />
       </View>
+      <SurveyModal visible={modalOpen} onClose={() => setModalOpen(false)} />
     </View>
   );
 };
