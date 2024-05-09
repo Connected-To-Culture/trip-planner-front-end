@@ -5,8 +5,8 @@ import COLORS from '../../constants/theme';
 import {useNavigation} from '@react-navigation/native';
 
 type SurveyModalProps = {
-  visible: boolean,
-  onClose: () => void,
+  visible: boolean;
+  onClose: () => void;
 };
 
 const SurveyModal: React.FC<SurveyModalProps> = ({visible, onClose}) => {
@@ -52,8 +52,8 @@ const SurveyModal: React.FC<SurveyModalProps> = ({visible, onClose}) => {
         </View>
       </View>
     </Modal>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   modalContainer: {},
