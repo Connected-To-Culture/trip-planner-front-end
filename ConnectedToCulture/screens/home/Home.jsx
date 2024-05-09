@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Image } from 'react-native';
 import homeStyles from './home.style';
 import globalStylesAndRowWithSpace from '../../constants/global.style';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -50,6 +50,7 @@ const Home = ({ navigation }) => {
       <View style={homeStyles.container}>
         <View style={[rowWithSpace('space-between'), homeStyles.header]}>
           <Text style={homeStyles.headerText}>Hi, MK</Text>
+          <Image source={require('../../assets/images/photo/avatar.jpg')} style={homeStyles.avatar}/>
         </View>
         <FlatList
           data={data}
