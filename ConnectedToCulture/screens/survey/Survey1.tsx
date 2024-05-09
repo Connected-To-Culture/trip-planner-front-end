@@ -9,7 +9,7 @@ import {SurveyDataContext} from '../../context/surveyData';
 import SurveyProgressBar from '../../components/survey/SurveyProgressBar';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
-import {SurveyModalContext} from '../../context/surveyModal';
+import SurveyModal from '../../components/survey/SurveyModal';
 
 type Survey1Props = {
   navigation: NavigationProp<any>;
@@ -17,7 +17,7 @@ type Survey1Props = {
 
 const Survey1 = ({navigation}: Survey1Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
-  const {setModalOpen} = useContext(SurveyModalContext);
+  const [modalOpen, setModalOpen] = useState(false);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
@@ -212,6 +212,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
           </View>
         </View>
       </ScrollView>
+      <SurveyModal visible={modalOpen} onClose={() => setModalOpen(false)} />
     </View>
   );
 };
