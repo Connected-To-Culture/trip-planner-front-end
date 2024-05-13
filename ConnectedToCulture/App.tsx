@@ -16,6 +16,8 @@ import { StatusBar,StyleSheet} from 'react-native';
 import BottomTabNavigation from './navigation/BottomTabNavigation';
 import COLORS from './constants/theme';
 import SurveyNavigator from './components/survey/SurveyNavigator';
+import exploreCountry from './screens/exploreCountry/exploreCountry';
+import MoreExplore from './screens/explore/moreExplore/moreExplore';
 
 function App(): React.JSX.Element {
  // Set the status bar background color
@@ -36,6 +38,8 @@ StatusBar.setBarStyle('dark-content');
       <Stack.Screen name='BottomNavigation' component={BottomTabNavigation} options={{headerShown:false}} />
       <Stack.Screen name='Welcome' component={Welcome} options={{headerShown:false}} />
       <Stack.Screen name='SurveyNavigator' component={SurveyNavigator} options={{headerShown:false}} />
+      <Stack.Screen name='explore-country' component={exploreCountry} options={{headerShown:false}} />
+      <Stack.Screen name='more-explore' component={MoreExplore} options={{headerShown:false}} />
     </Stack.Navigator>
   </NavigationContainer>
   );
