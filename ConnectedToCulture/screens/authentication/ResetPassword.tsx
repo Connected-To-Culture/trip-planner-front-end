@@ -69,6 +69,7 @@ const ResetPassword = ({navigation}: {navigation: any}) => {
     </View>
     <View style={styles.btnWrapper}>
     <ReusableButton
+    size={windowHeight*0.02}
     btnText='Send'
     textColor={COLORS.white} 
     backgroundColor={COLORS.primary}
@@ -77,7 +78,7 @@ const ResetPassword = ({navigation}: {navigation: any}) => {
     borderColor={COLORS.primary}
     paddingHorizantal={10}
     paddingVertical={10}
-    onPress={()=>navigation.navigate('Welcome')}
+    onPress={()=>navigation.navigate('CreateNewPassword')}
     />
     </View>
     <View style={{marginTop:windowHeight*0.04,alignItems:'center'}}>

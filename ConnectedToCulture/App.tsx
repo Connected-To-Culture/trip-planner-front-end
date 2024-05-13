@@ -11,7 +11,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 
-import { CreateAccount, Welcome,Signin,TermsAndConditions,ResetPassword} from './screens';
+import { CreateAccount, Welcome,Signin,TermsAndConditions,ResetPassword,CheckYourEmail,CreateNewPassword} from './screens';
 import {CountryDashboard} from './screens';
 import { StatusBar,StyleSheet} from 'react-native';
 import BottomTabNavigation from './navigation/BottomTabNavigation';
@@ -33,6 +33,8 @@ StatusBar.setBarStyle('dark-content');
       <Stack.Screen name='CreateAccount' component={CreateAccount} options={{headerShown:false}} />
       <Stack.Screen name='TermsAndConditions' component={TermsAndConditions} options={{headerShown:false}} />
       <Stack.Screen name='ResetPassword' component={ResetPassword} options={{headerShown:false}} />
+      <Stack.Screen name='CheckYourEmail' component={CheckYourEmail} options={{headerShown:false}} />
+      <Stack.Screen name='CreateNewPassword' component={CreateNewPassword} options={{headerShown:false}} />
       <Stack.Screen name='BottomNavigation' component={BottomTabNavigation} options={{headerShown:false}} />
       <Stack.Screen name='Welcome' component={Welcome} options={{headerShown:false}} />
       <Stack.Screen name='CountryDashboard' component={CountryDashboard} options={{headerShown:false}} />
