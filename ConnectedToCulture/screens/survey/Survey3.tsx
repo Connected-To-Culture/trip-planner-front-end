@@ -1,4 +1,4 @@
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, Pressable} from 'react-native';
 import {Dimensions} from 'react-native';
 import React, {useState, useEffect, useContext} from 'react';
 import {NavigationProp} from '@react-navigation/native';
@@ -7,6 +7,9 @@ import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
 import {SurveyDataContext} from '../../context/surveyData';
 import SurveyProgressBar from '../../components/survey/SurveyProgressBar';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
+import SurveyModal from '../../components/survey/SurveyModal';
 
 type Survey3Props = {
   navigation: NavigationProp<any>;
@@ -14,6 +17,7 @@ type Survey3Props = {
 
 const Survey3 = ({navigation}: Survey3Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
+  const [modalOpen, setModalOpen] = useState(false);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
@@ -40,6 +44,15 @@ const Survey3 = ({navigation}: Survey3Props) => {
         showsVerticalScrollIndicator={false}>
         <View style={surveyStyles.subContainer}>
           <View>
+            <Pressable
+              style={surveyStyles.modalXContainer}
+              onPress={() => setModalOpen(true)}>
+              <FontAwesomeIcon
+                size={28}
+                icon={faXmark}
+                color={COLORS.primary}
+              />
+            </Pressable>
             <SurveyProgressBar progress={27} />
             <Text style={surveyStyles.question}>
               Q3. What are your preferred modes of transportation during travel?
@@ -191,6 +204,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
           </View>
         </View>
       </ScrollView>
+      <SurveyModal visible={modalOpen} onClose={() => setModalOpen(false)} />
     </View>
   );
 };
