@@ -1,4 +1,4 @@
-import {View, Text, TextInput, ScrollView} from 'react-native';
+import {View, Text, TextInput, ScrollView, Pressable} from 'react-native';
 import {Dimensions} from 'react-native';
 import React, {useState, useEffect, useContext} from 'react';
 import {NavigationProp} from '@react-navigation/native';
@@ -7,6 +7,9 @@ import COLORS from '../../constants/theme';
 import surveyStyles from './survey.style';
 import {SurveyDataContext} from '../../context/surveyData';
 import SurveyProgressBar from '../../components/survey/SurveyProgressBar';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
+import SurveyModal from '../../components/survey/SurveyModal';
 
 type Survey2Props = {
   navigation: NavigationProp<any>;
@@ -14,6 +17,7 @@ type Survey2Props = {
 
 const Survey2 = ({navigation}: Survey2Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
+  const [modalOpen, setModalOpen] = useState(false);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
@@ -40,6 +44,15 @@ const Survey2 = ({navigation}: Survey2Props) => {
         showsVerticalScrollIndicator={false}>
         <View style={surveyStyles.subContainer}>
           <View>
+            <Pressable
+              style={surveyStyles.modalXContainer}
+              onPress={() => setModalOpen(true)}>
+              <FontAwesomeIcon
+                size={28}
+                icon={faXmark}
+                color={COLORS.primary}
+              />
+            </Pressable>
             <SurveyProgressBar progress={18} />
             <Text style={surveyStyles.question}>
               Q2. What are your main interests when traveling to Africa?
@@ -53,7 +66,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.wildlife ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.wildlife ? COLORS.primary : COLORS.darkGray
+                  selected.wildlife ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -75,7 +88,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.historical ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.historical ? COLORS.primary : COLORS.darkGray
+                  selected.historical ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -97,7 +110,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.cultural ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.cultural ? COLORS.primary : COLORS.darkGray
+                  selected.cultural ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -119,7 +132,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.adventure ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.adventure ? COLORS.primary : COLORS.darkGray
+                  selected.adventure ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -138,7 +151,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={selected.food ? COLORS.primary : COLORS.white}
-                borderColor={selected.food ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.food ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Food and culinary experiences"
@@ -157,7 +170,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.entertainment ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.entertainment ? COLORS.primary : COLORS.darkGray
+                  selected.entertainment ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -234,6 +247,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
           </View>
         </View>
       </ScrollView>
+      <SurveyModal visible={modalOpen} onClose={() => setModalOpen(false)} />
     </View>
   );
 };

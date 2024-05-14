@@ -1,8 +1,9 @@
 import React from 'react';
-import {Modal, View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {Modal, View, Text, TouchableOpacity} from 'react-native';
 import ReusableButton from '../reusable/reusableButton/ReusableButton';
 import COLORS from '../../constants/theme';
 import {useNavigation} from '@react-navigation/native';
+import surveyModalStyles from './surveyModal.style';
 
 type SurveyModalProps = {
   visible: boolean;
@@ -18,14 +19,16 @@ const SurveyModal: React.FC<SurveyModalProps> = ({visible, onClose}) => {
       transparent={true}
       onRequestClose={onClose}>
       <TouchableOpacity
-        style={styles.overlay}
+        style={surveyModalStyles.overlay}
         activeOpacity={1}
         onPress={onClose}>
-        <View style={styles.centeredView} >
-          <View style={styles.modalView}>
-            <Text>Leaving Survey</Text>
-            <Text>Are you sure you want to end the survey now?</Text>
-            <View style={styles.buttonContainer}>
+        <View style={surveyModalStyles.centeredView}>
+          <View style={surveyModalStyles.modalView}>
+            <Text style={surveyModalStyles.modalHeader}>Leaving Survey</Text>
+            <Text style={surveyModalStyles.modalParagraph}>
+              Are you sure you want to end the survey now?
+            </Text>
+            <View style={surveyModalStyles.buttonContainer}>
               <ReusableButton
                 backgroundColor={COLORS.white}
                 borderColor={COLORS.primary}
@@ -62,42 +65,5 @@ const SurveyModal: React.FC<SurveyModalProps> = ({visible, onClose}) => {
     </Modal>
   );
 };
-
-const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalView: {
-    backgroundColor: 'white',
-    borderRadius: 8,
-    padding: 20,
-    elevation: 5,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    width: 287,
-    height: 187
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 20,
-  },
-  overlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-});
 
 export default SurveyModal;

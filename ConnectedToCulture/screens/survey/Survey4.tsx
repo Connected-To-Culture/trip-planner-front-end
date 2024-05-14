@@ -1,4 +1,4 @@
-import {View, Text, ScrollView, Pressable} from 'react-native';
+import {View, Text, TextInput, ScrollView, Pressable} from 'react-native';
 import {Dimensions} from 'react-native';
 import React, {useState, useEffect, useContext} from 'react';
 import {NavigationProp} from '@react-navigation/native';
@@ -11,11 +11,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
 import SurveyModal from '../../components/survey/SurveyModal';
 
-type Survey3Props = {
+type Survey1Props = {
   navigation: NavigationProp<any>;
 };
 
-const Survey3 = ({navigation}: Survey3Props) => {
+const Survey4 = ({navigation}: Survey1Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
   const [modalOpen, setModalOpen] = useState(false);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
@@ -53,9 +53,9 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 color={COLORS.primary}
               />
             </Pressable>
-            <SurveyProgressBar progress={27} />
+            <SurveyProgressBar progress={36} />
             <Text style={surveyStyles.question}>
-              Q3. What are your preferred modes of transportation during travel?
+              Q4. How do you prefer to plan your trip activities?
             </Text>
             <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
 
@@ -63,21 +63,21 @@ const Survey3 = ({navigation}: Survey3Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.airplane ? COLORS.primary : COLORS.white
+                  selected.exploreDest ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.airplane ? COLORS.primary : COLORS.black400
+                  selected.exploreDest ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Airplane"
+                btnText="Explore destination highlights and attractions"
                 onPress={() =>
-                  setSelected({...selected, airplane: !selected.airplane})
+                  setSelected({...selected, exploreDest: !selected.exploreDest})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
-                size={16}
-                textColor={selected.airplane ? COLORS.white : COLORS.black}
+                size={14}
+                textColor={selected.exploreDest ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -85,35 +85,26 @@ const Survey3 = ({navigation}: Survey3Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.public ? COLORS.primary : COLORS.white
+                  selected.recieveFlightInfo ? COLORS.primary : COLORS.white
                 }
-                borderColor={selected.public ? COLORS.primary : COLORS.black400}
+                borderColor={
+                  selected.recieveFlightInfo ? COLORS.primary : COLORS.black400
+                }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Public transportation (e.g. bus, train)"
+                btnText="Recieve flight information and track flights"
                 onPress={() =>
-                  setSelected({...selected, public: !selected.public})
+                  setSelected({
+                    ...selected,
+                    recieveFlightInfo: !selected.recieveFlightInfo,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
-                size={16}
-                textColor={selected.public ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                size={15}
+                textColor={
+                  selected.recieveFlightInfo ? COLORS.white : COLORS.black
                 }
-              />
-              <ResuableButton
-                alignItems="left"
-                backgroundColor={selected.car ? COLORS.primary : COLORS.white}
-                borderColor={selected.car ? COLORS.primary : COLORS.black400}
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Car"
-                onPress={() => setSelected({...selected, car: !selected.car})}
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.car ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -121,21 +112,26 @@ const Survey3 = ({navigation}: Survey3Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.bicycle ? COLORS.primary : COLORS.white
+                  selected.accessAirportInfo ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.bicycle ? COLORS.primary : COLORS.black400
+                  selected.accessAirportInfo ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Bicycle"
+                btnText="Access airport information and country arrivals"
                 onPress={() =>
-                  setSelected({...selected, bicycle: !selected.bicycle})
+                  setSelected({
+                    ...selected,
+                    accessAirportInfo: !selected.accessAirportInfo,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
-                size={16}
-                textColor={selected.bicycle ? COLORS.white : COLORS.black}
+                size={14}
+                textColor={
+                  selected.accessAirportInfo ? COLORS.white : COLORS.black
+                }
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -143,21 +139,97 @@ const Survey3 = ({navigation}: Survey3Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.notSure ? COLORS.primary : COLORS.white
+                  selected.findAccom ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.notSure ? COLORS.primary : COLORS.black400
+                  selected.findAccom ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="I'm not sure yet"
+                btnText="Find accomondations"
                 onPress={() =>
-                  setSelected({...selected, notSure: !selected.notSure})
+                  setSelected({...selected, findAccom: !selected.findAccom})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.notSure ? COLORS.white : COLORS.black}
+                textColor={selected.findAccom ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                alignItems="left"
+                backgroundColor={
+                  selected.utilizeLangTrans ? COLORS.primary : COLORS.white
+                }
+                borderColor={
+                  selected.utilizeLangTrans ? COLORS.primary : COLORS.black400
+                }
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Utilize languague translation services"
+                onPress={() =>
+                  setSelected({
+                    ...selected,
+                    utilizeLangTrans: !selected.utilizeLangTrans,
+                  })
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={
+                  selected.utilizeLangTrans ? COLORS.white : COLORS.black
+                }
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                alignItems="left"
+                backgroundColor={
+                  selected.planActivities ? COLORS.primary : COLORS.white
+                }
+                borderColor={
+                  selected.planActivities ? COLORS.primary : COLORS.black400
+                }
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Plan activities and events"
+                onPress={() =>
+                  setSelected({
+                    ...selected,
+                    planActivities: !selected.planActivities,
+                  })
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={
+                  selected.planActivities ? COLORS.white : COLORS.black
+                }
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                alignItems="left"
+                backgroundColor={
+                  selected.noneOfAbove ? COLORS.primary : COLORS.white
+                }
+                borderColor={
+                  selected.noneOfAbove ? COLORS.primary : COLORS.black400
+                }
+                borderRadius={10}
+                borderWidth={1}
+                btnText="None of the above"
+                onPress={() =>
+                  setSelected({...selected, noneOfAbove: !selected.noneOfAbove})
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.noneOfAbove ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -177,7 +249,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
               borderRadius={8}
               borderWidth={1}
               btnText="Back"
-              onPress={() => navigation.navigate('Survey2')}
+              onPress={() => navigation.navigate('Survey3')}
               paddingHorizantal={16}
               paddingVertical={8}
               size={16}
@@ -192,7 +264,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
               borderRadius={8}
               borderWidth={1}
               btnText="Next"
-              onPress={() => navigation.navigate('Survey4')}
+              onPress={() => navigation.navigate('Survey5')}
               paddingHorizantal={16}
               paddingVertical={8}
               size={16}
@@ -209,4 +281,4 @@ const Survey3 = ({navigation}: Survey3Props) => {
   );
 };
 
-export default Survey3;
+export default Survey4;

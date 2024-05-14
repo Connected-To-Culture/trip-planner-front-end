@@ -21,6 +21,13 @@ type SelectedState = {
   car: boolean;
   bicycle: boolean;
   notSure: boolean;
+  exploreDest: boolean;
+  recieveFlightInfo: boolean;
+  accessAirportInfo: boolean;
+  findAccom: boolean;
+  utilizeLangTrans: boolean;
+  planActivities: boolean;
+  noneOfAbove: boolean;
 };
 
 // Define the type for the context value
@@ -51,6 +58,13 @@ const SurveyDataContext = React.createContext<SurveyDataContextType>({
     car: false,
     bicycle: false,
     notSure: false,
+    exploreDest: false,
+    recieveFlightInfo: false,
+    accessAirportInfo: false,
+    findAccom: false,
+    utilizeLangTrans: false,
+    planActivities: false,
+    noneOfAbove: false,
   },
   setSelected: () => {},
 });
@@ -83,6 +97,13 @@ const SurveyDataProviderWrapper = ({
     car: false,
     bicycle: false,
     notSure: false,
+    exploreDest: false,
+    recieveFlightInfo: false,
+    accessAirportInfo: false,
+    findAccom: false,
+    utilizeLangTrans: false,
+    planActivities: false,
+    noneOfAbove: false,
   });
 
   return (
