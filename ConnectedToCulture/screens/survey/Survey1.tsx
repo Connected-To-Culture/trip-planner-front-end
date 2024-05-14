@@ -63,7 +63,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={selected.NG ? COLORS.primary : COLORS.white}
-                borderColor={selected.NG ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.NG ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Nigeria (NG)"
@@ -79,7 +79,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={selected.ET ? COLORS.primary : COLORS.white}
-                borderColor={selected.ET ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.ET ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Ethiopia (ET)"
@@ -95,7 +95,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={selected.TG ? COLORS.primary : COLORS.white}
-                borderColor={selected.TG ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.TG ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Togo (TG)"
@@ -111,7 +111,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={selected.ZA ? COLORS.primary : COLORS.white}
-                borderColor={selected.ZA ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.ZA ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="South Africa (ZA)"
@@ -127,7 +127,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={selected.GH ? COLORS.primary : COLORS.white}
-                borderColor={selected.GH ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.GH ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Ghana (GH)"
@@ -145,7 +145,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 backgroundColor={
                   selected.Zambia ? COLORS.primary : COLORS.white
                 }
-                borderColor={selected.Zambia ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.Zambia ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Zambia"

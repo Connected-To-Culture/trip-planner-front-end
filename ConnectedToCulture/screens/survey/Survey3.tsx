@@ -66,7 +66,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
                   selected.airplane ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.airplane ? COLORS.primary : COLORS.darkGray
+                  selected.airplane ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -87,7 +87,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 backgroundColor={
                   selected.public ? COLORS.primary : COLORS.white
                 }
-                borderColor={selected.public ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.public ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Public transportation (e.g. bus, train)"
@@ -105,7 +105,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={selected.car ? COLORS.primary : COLORS.white}
-                borderColor={selected.car ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.car ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Car"
@@ -124,7 +124,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
                   selected.bicycle ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.bicycle ? COLORS.primary : COLORS.darkGray
+                  selected.bicycle ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -146,7 +146,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
                   selected.notSure ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.notSure ? COLORS.primary : COLORS.darkGray
+                  selected.notSure ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}

@@ -66,7 +66,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.wildlife ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.wildlife ? COLORS.primary : COLORS.darkGray
+                  selected.wildlife ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -88,7 +88,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.historical ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.historical ? COLORS.primary : COLORS.darkGray
+                  selected.historical ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -110,7 +110,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.cultural ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.cultural ? COLORS.primary : COLORS.darkGray
+                  selected.cultural ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -132,7 +132,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.adventure ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.adventure ? COLORS.primary : COLORS.darkGray
+                  selected.adventure ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -151,7 +151,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={selected.food ? COLORS.primary : COLORS.white}
-                borderColor={selected.food ? COLORS.primary : COLORS.darkGray}
+                borderColor={selected.food ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Food and culinary experiences"
@@ -170,7 +170,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   selected.entertainment ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.entertainment ? COLORS.primary : COLORS.darkGray
+                  selected.entertainment ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
