@@ -11,11 +11,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
 import SurveyModal from '../../components/survey/SurveyModal';
 
-type Survey1Props = {
+type Survey4Props = {
   navigation: NavigationProp<any>;
 };
 
-const Survey4 = ({navigation}: Survey1Props) => {
+const Survey4 = ({navigation}: Survey4Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
   const [modalOpen, setModalOpen] = useState(false);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);

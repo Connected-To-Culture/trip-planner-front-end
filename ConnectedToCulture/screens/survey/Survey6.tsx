@@ -1,4 +1,4 @@
-import {View, Text, TextInput, ScrollView, Pressable} from 'react-native';
+import {View, Text, ScrollView, Pressable} from 'react-native';
 import {Dimensions} from 'react-native';
 import React, {useState, useEffect, useContext} from 'react';
 import {NavigationProp} from '@react-navigation/native';
@@ -11,11 +11,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
 import SurveyModal from '../../components/survey/SurveyModal';
 
-type Survey5Props = {
+type Survey6Props = {
   navigation: NavigationProp<any>;
 };
 
-const Survey5 = ({navigation}: Survey5Props) => {
+const Survey6 = ({navigation}: Survey6Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
   const [modalOpen, setModalOpen] = useState(false);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
@@ -53,10 +53,9 @@ const Survey5 = ({navigation}: Survey5Props) => {
                 color={COLORS.primary}
               />
             </Pressable>
-            <SurveyProgressBar progress={45} />
+            <SurveyProgressBar progress={55} />
             <Text style={surveyStyles.question}>
-              Q5. Which types of information would you like to access while
-              planning your trip?
+              Q6. What are your preferred accommodation types?
             </Text>
             <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
 
@@ -64,28 +63,68 @@ const Survey5 = ({navigation}: Survey5Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.q5FlightAirportInfo ? COLORS.primary : COLORS.white
+                  selected.q6Hotels ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.q5FlightAirportInfo
-                    ? COLORS.primary
-                    : COLORS.black400
+                  selected.q6Hotels ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Flight and Airport Information"
+                btnText="Hotels"
+                onPress={() =>
+                  setSelected({...selected, q6Hotels: !selected.q6Hotels})
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.q6Hotels ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                alignItems="left"
+                backgroundColor={
+                  selected.q6Hostels ? COLORS.primary : COLORS.white
+                }
+                borderColor={
+                  selected.q6Hostels ? COLORS.primary : COLORS.black400
+                }
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Hostels"
+                onPress={() =>
+                  setSelected({...selected, q6Hostels: !selected.q6Hostels})
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.q6Hostels ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                alignItems="left"
+                backgroundColor={
+                  selected.q6VacaRentals ? COLORS.primary : COLORS.white
+                }
+                borderColor={
+                  selected.q6VacaRentals ? COLORS.primary : COLORS.black400
+                }
+                borderRadius={10}
+                borderWidth={1}
+                btnText="Vacation rentals (e.g., Airbnb)"
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    q5FlightAirportInfo: !selected.q5FlightAirportInfo,
+                    q6VacaRentals: !selected.q6VacaRentals,
                   })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={
-                  selected.q5FlightAirportInfo ? COLORS.white : COLORS.black
-                }
+                textColor={selected.q6VacaRentals ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -93,26 +132,21 @@ const Survey5 = ({navigation}: Survey5Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.q5AccomOptions ? COLORS.primary : COLORS.white
+                  selected.q6Camping ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.q5AccomOptions ? COLORS.primary : COLORS.black400
+                  selected.q6Camping ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Accommodation Options"
+                btnText="Camping"
                 onPress={() =>
-                  setSelected({
-                    ...selected,
-                    q5AccomOptions: !selected.q5AccomOptions,
-                  })
+                  setSelected({...selected, q6Camping: !selected.q6Camping})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={
-                  selected.q5AccomOptions ? COLORS.white : COLORS.black
-                }
+                textColor={selected.q6Camping ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -120,90 +154,26 @@ const Survey5 = ({navigation}: Survey5Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.q5Weather ? COLORS.primary : COLORS.white
+                  selected.q6notSure ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.q5Weather ? COLORS.primary : COLORS.black400
+                  selected.q6notSure ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Weather Updates and Forecasts"
+                btnText="I'm not sure yet"
                 onPress={() =>
-                  setSelected({...selected, q5Weather: !selected.q5Weather})
+                  setSelected({...selected, q6notSure: !selected.q6notSure})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.q5Weather ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                alignItems="left"
-                backgroundColor={
-                  selected.q5ActivityRecs ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q5ActivityRecs ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Activity Recommendations"
-                onPress={() =>
-                  setSelected({
-                    ...selected,
-                    q5ActivityRecs: !selected.q5ActivityRecs,
-                  })
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={
-                  selected.q5ActivityRecs ? COLORS.white : COLORS.black
-                }
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                alignItems="left"
-                backgroundColor={
-                  selected.q5LangTrans ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q5LangTrans ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Language Translation Services"
-                onPress={() =>
-                  setSelected({...selected, q5LangTrans: !selected.q5LangTrans})
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.q5LangTrans ? COLORS.white : COLORS.black}
+                textColor={selected.q6notSure ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
 
-              <View style={surveyStyles.specifyOtherContainer}>
-                <Text style={surveyStyles.otherText}>
-                  Other (please specify):
-                </Text>
-                <TextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  onChangeText={text =>
-                    setSelected({...selected, q5Text: text})
-                  }
-                  style={surveyStyles.textInput}
-                  width={curWidth * 0.5}
-                  value={selected.q5Text}
-                />
-              </View>
             </View>
           </View>
 
@@ -219,7 +189,7 @@ const Survey5 = ({navigation}: Survey5Props) => {
               borderRadius={8}
               borderWidth={1}
               btnText="Back"
-              onPress={() => navigation.navigate('Survey4')}
+              onPress={() => navigation.navigate('Survey5')}
               paddingHorizantal={16}
               paddingVertical={8}
               size={16}
@@ -234,7 +204,7 @@ const Survey5 = ({navigation}: Survey5Props) => {
               borderRadius={8}
               borderWidth={1}
               btnText="Next"
-              onPress={() => navigation.navigate('Survey6')}
+              onPress={() => navigation.navigate('Survey7')}
               paddingHorizantal={16}
               paddingVertical={8}
               size={16}
@@ -251,4 +221,4 @@ const Survey5 = ({navigation}: Survey5Props) => {
   );
 };
 
-export default Survey5;
+export default Survey6;
