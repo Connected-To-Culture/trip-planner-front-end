@@ -2,32 +2,32 @@ import React, {Dispatch, SetStateAction, useState} from 'react';
 
 // Define the type for the selected state
 type SelectedState = {
-  NG: boolean;
-  ET: boolean;
-  TG: boolean;
-  ZA: boolean;
-  GH: boolean;
-  Zambia: boolean;
+  q1NG: boolean;
+  q1ET: boolean;
+  q1TG: boolean;
+  q1ZA: boolean;
+  q1GH: boolean;
+  q1Zambia: boolean;
   q1Text: string;
-  wildlife: boolean;
-  historical: boolean;
-  cultural: boolean;
-  adventure: boolean;
-  food: boolean;
-  entertainment: boolean;
+  q2wildlife: boolean;
+  q2historical: boolean;
+  q2cultural: boolean;
+  q2adventure: boolean;
+  q2food: boolean;
+  q2entertainment: boolean;
   q2Text: string;
-  airplane: boolean;
-  public: boolean;
-  car: boolean;
-  bicycle: boolean;
-  notSure: boolean;
-  exploreDest: boolean;
-  recieveFlightInfo: boolean;
-  accessAirportInfo: boolean;
-  findAccom: boolean;
-  utilizeLangTrans: boolean;
-  planActivities: boolean;
-  noneOfAbove: boolean;
+  q3airplane: boolean;
+  q3public: boolean;
+  q3car: boolean;
+  q3bicycle: boolean;
+  q3notSure: boolean;
+  q4exploreDest: boolean;
+  q4recieveFlightInfo: boolean;
+  q4accessAirportInfo: boolean;
+  q4findAccom: boolean;
+  q4utilizeLangTrans: boolean;
+  q4planActivities: boolean;
+  q4noneOfAbove: boolean;
 };
 
 // Define the type for the context value
@@ -39,32 +39,32 @@ type SurveyDataContextType = {
 // Create the context
 const SurveyDataContext = React.createContext<SurveyDataContextType>({
   selected: {
-    NG: false,
-    ET: false,
-    TG: false,
-    ZA: false,
-    GH: false,
-    Zambia: false,
+    q1NG: false,
+    q1ET: false,
+    q1TG: false,
+    q1ZA: false,
+    q1GH: false,
+    q1Zambia: false,
     q1Text: '',
-    wildlife: false,
-    historical: false,
-    cultural: false,
-    adventure: false,
-    food: false,
-    entertainment: false,
+    q2wildlife: false,
+    q2historical: false,
+    q2cultural: false,
+    q2adventure: false,
+    q2food: false,
+    q2entertainment: false,
     q2Text: '',
-    airplane: false,
-    public: false,
-    car: false,
-    bicycle: false,
-    notSure: false,
-    exploreDest: false,
-    recieveFlightInfo: false,
-    accessAirportInfo: false,
-    findAccom: false,
-    utilizeLangTrans: false,
-    planActivities: false,
-    noneOfAbove: false,
+    q3airplane: false,
+    q3public: false,
+    q3car: false,
+    q3bicycle: false,
+    q3notSure: false,
+    q4exploreDest: false,
+    q4recieveFlightInfo: false,
+    q4accessAirportInfo: false,
+    q4findAccom: false,
+    q4utilizeLangTrans: false,
+    q4planActivities: false,
+    q4noneOfAbove: false,
   },
   setSelected: () => {},
 });
@@ -78,32 +78,32 @@ const SurveyDataProviderWrapper = ({
   children,
 }: SurveyDataProviderWrapperProps) => {
   const [selected, setSelected] = useState<SelectedState>({
-    NG: false,
-    ET: false,
-    TG: false,
-    ZA: false,
-    GH: false,
-    Zambia: false,
+    q1NG: false,
+    q1ET: false,
+    q1TG: false,
+    q1ZA: false,
+    q1GH: false,
+    q1Zambia: false,
     q1Text: '',
-    wildlife: false,
-    historical: false,
-    cultural: false,
-    adventure: false,
-    food: false,
-    entertainment: false,
+    q2wildlife: false,
+    q2historical: false,
+    q2cultural: false,
+    q2adventure: false,
+    q2food: false,
+    q2entertainment: false,
     q2Text: '',
-    airplane: false,
-    public: false,
-    car: false,
-    bicycle: false,
-    notSure: false,
-    exploreDest: false,
-    recieveFlightInfo: false,
-    accessAirportInfo: false,
-    findAccom: false,
-    utilizeLangTrans: false,
-    planActivities: false,
-    noneOfAbove: false,
+    q3airplane: false,
+    q3public: false,
+    q3car: false,
+    q3bicycle: false,
+    q3notSure: false,
+    q4exploreDest: false,
+    q4recieveFlightInfo: false,
+    q4accessAirportInfo: false,
+    q4findAccom: false,
+    q4utilizeLangTrans: false,
+    q4planActivities: false,
+    q4noneOfAbove: false,
   });
 
   return (

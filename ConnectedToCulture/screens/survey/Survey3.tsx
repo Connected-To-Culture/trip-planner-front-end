@@ -63,21 +63,21 @@ const Survey3 = ({navigation}: Survey3Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.airplane ? COLORS.primary : COLORS.white
+                  selected.q3airplane ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.airplane ? COLORS.primary : COLORS.black400
+                  selected.q3airplane ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Airplane"
                 onPress={() =>
-                  setSelected({...selected, airplane: !selected.airplane})
+                  setSelected({...selected, q3airplane: !selected.q3airplane})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.airplane ? COLORS.white : COLORS.black}
+                textColor={selected.q3airplane ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -85,35 +85,37 @@ const Survey3 = ({navigation}: Survey3Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.public ? COLORS.primary : COLORS.white
+                  selected.q3public ? COLORS.primary : COLORS.white
                 }
-                borderColor={selected.public ? COLORS.primary : COLORS.black400}
+                borderColor={selected.q3public ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Public transportation (e.g. bus, train)"
                 onPress={() =>
-                  setSelected({...selected, public: !selected.public})
+                  setSelected({...selected, q3public: !selected.q3public})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.public ? COLORS.white : COLORS.black}
+                textColor={selected.q3public ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
               <ResuableButton
                 alignItems="left"
-                backgroundColor={selected.car ? COLORS.primary : COLORS.white}
-                borderColor={selected.car ? COLORS.primary : COLORS.black400}
+                backgroundColor={selected.q3car ? COLORS.primary : COLORS.white}
+                borderColor={selected.q3car ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Car"
-                onPress={() => setSelected({...selected, car: !selected.car})}
+                onPress={() =>
+                  setSelected({...selected, q3car: !selected.q3car})
+                }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.car ? COLORS.white : COLORS.black}
+                textColor={selected.q3car ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -121,21 +123,21 @@ const Survey3 = ({navigation}: Survey3Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.bicycle ? COLORS.primary : COLORS.white
+                  selected.q3bicycle ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.bicycle ? COLORS.primary : COLORS.black400
+                  selected.q3bicycle ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Bicycle"
                 onPress={() =>
-                  setSelected({...selected, bicycle: !selected.bicycle})
+                  setSelected({...selected, q3bicycle: !selected.q3bicycle})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.bicycle ? COLORS.white : COLORS.black}
+                textColor={selected.q3bicycle ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -143,21 +145,21 @@ const Survey3 = ({navigation}: Survey3Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.notSure ? COLORS.primary : COLORS.white
+                  selected.q3notSure ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.notSure ? COLORS.primary : COLORS.black400
+                  selected.q3notSure ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
                 btnText="I'm not sure yet"
                 onPress={() =>
-                  setSelected({...selected, notSure: !selected.notSure})
+                  setSelected({...selected, q3notSure: !selected.q3notSure})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.notSure ? COLORS.white : COLORS.black}
+                textColor={selected.q3notSure ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }

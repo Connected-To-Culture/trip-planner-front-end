@@ -1,4 +1,4 @@
-import {View, Text, TextInput, ScrollView, Pressable} from 'react-native';
+import {View, Text, ScrollView, Pressable} from 'react-native';
 import {Dimensions} from 'react-native';
 import React, {useState, useEffect, useContext} from 'react';
 import {NavigationProp} from '@react-navigation/native';
@@ -63,21 +63,24 @@ const Survey4 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.exploreDest ? COLORS.primary : COLORS.white
+                  selected.q4exploreDest ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.exploreDest ? COLORS.primary : COLORS.black400
+                  selected.q4exploreDest ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Explore destination highlights and attractions"
                 onPress={() =>
-                  setSelected({...selected, exploreDest: !selected.exploreDest})
+                  setSelected({
+                    ...selected,
+                    q4exploreDest: !selected.q4exploreDest,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={14}
-                textColor={selected.exploreDest ? COLORS.white : COLORS.black}
+                textColor={selected.q4exploreDest ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -85,10 +88,10 @@ const Survey4 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.recieveFlightInfo ? COLORS.primary : COLORS.white
+                  selected.q4recieveFlightInfo ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.recieveFlightInfo ? COLORS.primary : COLORS.black400
+                  selected.q4recieveFlightInfo ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -96,14 +99,14 @@ const Survey4 = ({navigation}: Survey1Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    recieveFlightInfo: !selected.recieveFlightInfo,
+                    q4recieveFlightInfo: !selected.q4recieveFlightInfo,
                   })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={15}
                 textColor={
-                  selected.recieveFlightInfo ? COLORS.white : COLORS.black
+                  selected.q4recieveFlightInfo ? COLORS.white : COLORS.black
                 }
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
@@ -112,10 +115,10 @@ const Survey4 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.accessAirportInfo ? COLORS.primary : COLORS.white
+                  selected.q4accessAirportInfo ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.accessAirportInfo ? COLORS.primary : COLORS.black400
+                  selected.q4accessAirportInfo ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -123,14 +126,14 @@ const Survey4 = ({navigation}: Survey1Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    accessAirportInfo: !selected.accessAirportInfo,
+                    q4accessAirportInfo: !selected.q4accessAirportInfo,
                   })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={14}
                 textColor={
-                  selected.accessAirportInfo ? COLORS.white : COLORS.black
+                  selected.q4accessAirportInfo ? COLORS.white : COLORS.black
                 }
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
@@ -139,21 +142,21 @@ const Survey4 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.findAccom ? COLORS.primary : COLORS.white
+                  selected.q4findAccom ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.findAccom ? COLORS.primary : COLORS.black400
+                  selected.q4findAccom ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Find accomondations"
                 onPress={() =>
-                  setSelected({...selected, findAccom: !selected.findAccom})
+                  setSelected({...selected, q4findAccom: !selected.q4findAccom})
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.findAccom ? COLORS.white : COLORS.black}
+                textColor={selected.q4findAccom ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -161,10 +164,10 @@ const Survey4 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.utilizeLangTrans ? COLORS.primary : COLORS.white
+                  selected.q4utilizeLangTrans ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.utilizeLangTrans ? COLORS.primary : COLORS.black400
+                  selected.q4utilizeLangTrans ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -172,14 +175,14 @@ const Survey4 = ({navigation}: Survey1Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    utilizeLangTrans: !selected.utilizeLangTrans,
+                    q4utilizeLangTrans: !selected.q4utilizeLangTrans,
                   })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
                 textColor={
-                  selected.utilizeLangTrans ? COLORS.white : COLORS.black
+                  selected.q4utilizeLangTrans ? COLORS.white : COLORS.black
                 }
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
@@ -188,10 +191,10 @@ const Survey4 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.planActivities ? COLORS.primary : COLORS.white
+                  selected.q4planActivities ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.planActivities ? COLORS.primary : COLORS.black400
+                  selected.q4planActivities ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -199,14 +202,14 @@ const Survey4 = ({navigation}: Survey1Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    planActivities: !selected.planActivities,
+                    q4planActivities: !selected.q4planActivities,
                   })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
                 textColor={
-                  selected.planActivities ? COLORS.white : COLORS.black
+                  selected.q4planActivities ? COLORS.white : COLORS.black
                 }
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
@@ -215,21 +218,24 @@ const Survey4 = ({navigation}: Survey1Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.noneOfAbove ? COLORS.primary : COLORS.white
+                  selected.q4noneOfAbove ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.noneOfAbove ? COLORS.primary : COLORS.black400
+                  selected.q4noneOfAbove ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
                 btnText="None of the above"
                 onPress={() =>
-                  setSelected({...selected, noneOfAbove: !selected.noneOfAbove})
+                  setSelected({
+                    ...selected,
+                    q4noneOfAbove: !selected.q4noneOfAbove,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.noneOfAbove ? COLORS.white : COLORS.black}
+                textColor={selected.q4noneOfAbove ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
