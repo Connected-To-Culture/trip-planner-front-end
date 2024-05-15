@@ -91,7 +91,9 @@ const Survey4 = ({navigation}: Survey1Props) => {
                   selected.q4recieveFlightInfo ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.q4recieveFlightInfo ? COLORS.primary : COLORS.black400
+                  selected.q4recieveFlightInfo
+                    ? COLORS.primary
+                    : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
@@ -118,7 +120,9 @@ const Survey4 = ({navigation}: Survey1Props) => {
                   selected.q4accessAirportInfo ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.q4accessAirportInfo ? COLORS.primary : COLORS.black400
+                  selected.q4accessAirportInfo
+                    ? COLORS.primary
+                    : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
