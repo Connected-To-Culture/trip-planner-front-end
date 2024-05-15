@@ -82,8 +82,15 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 5,
         justifyContent: 'center',
+        color: 'black',
+        
         // Text styles moved to TextInput component
     },
+    visibilityButton: {
+        padding: 10,
+        position: 'absolute',
+        right: 0,
+      },
     wrapper: {
         position: 'relative',
         marginBottom: windowHeight * 0.015,
@@ -201,6 +208,8 @@ textBox:{
 },
 textEmail: {
     marginBottom:0}
+
+
 });
 
 export default styles;

@@ -34,23 +34,23 @@ interface Props {
     },
     {
       id:3,
-      title: 'Tanzania',
-      image: require('../../assets/images/country/tanzania/zanzibar.jpg'),
+      title: 'Ethiopia',
+      image: require('../../assets/images/country/ethiopia/ethiopia.png'),
    },
    { 
     id:4,
-    title: 'South Africa',
-    image: require('../../assets/images/country/southAfrica/sa.jpg'),
+    title: 'Zambia',
+    image: require('../../assets/images/country/zambia/zambia.png'),
   },
   {
     id:5,
-    title: 'Ghana',
-    image:require('../../assets/images/country/ghana/yoel-winkler-zCAh6tOWFt8-unsplash.jpg'),
+    title: 'Togo',
+    image:require('../../assets/images/country/togo/togo.png'),
   },
   {
     id:6,
-    title: 'Tanzania',
-    image: require('../../assets/images/country/tanzania/zanzibar.jpg'),
+    title: 'Nigeria',
+    image: require('../../assets/images/country/nigeria/nigeria.png'),
  },
   ];
 

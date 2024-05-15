@@ -9,6 +9,8 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import { LoginButtons,ReusableButton,HeightSpacer} from '../../components';
 import COLORS from '../../constants/theme';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 
 interface FormModel {
@@ -28,6 +30,12 @@ const validationSchema = Yup.object().shape({
 
 const Signin = ({navigation}: {navigation: any}) => {
   const [isSelected, setSelection] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const togglePasswordVisibility = (field: string) => {
+    if (field === 'password') {
+      setIsPasswordVisible(!isPasswordVisible);
+    } 
+  }
  
   return (
     <ImageBackground
@@ -77,8 +85,13 @@ const Signin = ({navigation}: {navigation: any}) => {
     value={values.password}
     onChangeText={handleChange('password')}
     autoCapitalize='none'
-    secureTextEntry
-    autoCorrect={false}></TextInput>
+    autoCorrect={false}
+                secureTextEntry={!isPasswordVisible}/>
+           <TouchableOpacity 
+                style={styles.visibilityButton} 
+                onPress={() => togglePasswordVisibility('password')}>
+                <FontAwesomeIcon icon={isPasswordVisible ? faEye : faEyeSlash} size={20} color="#79796E" />
+            </TouchableOpacity>
    </View>
    {touched.password && errors.password && (
               <Text style={styles.errorMessage}>{errors.password}</Text>

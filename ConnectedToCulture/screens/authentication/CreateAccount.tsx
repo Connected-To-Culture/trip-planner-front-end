@@ -1,5 +1,5 @@
 import { View, Text, TextInput, TouchableOpacity,Image, Alert, Dimensions, ImageBackground } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import globalStylesAndRowWithSpace from '../../constants/global.style';
 import styles from './authentication.style';
 import COLORS from '../../constants/theme';
@@ -7,6 +7,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { FormikValues, FormikHelpers } from 'formik';
 import { LoginButtons } from '../../components';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 // Get the dimensions of the screen
 const windowHeight = Dimensions.get('window').height;
@@ -56,6 +58,16 @@ const CreateAccount = ({navigation}: {navigation: any}) => {
           setSubmitting(false);
         
       };
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const [isVerifyPasswordVisible, setIsVerifyPasswordVisible] = useState(false);
+  
+    const togglePasswordVisibility = (field: string) => {
+    if (field === 'password') {
+      setIsPasswordVisible(!isPasswordVisible);
+    } else if (field === 'verifyPassword') {
+      setIsVerifyPasswordVisible(!isVerifyPasswordVisible);
+    }
+    };
     
   return (
     <ImageBackground
@@ -159,7 +171,12 @@ const CreateAccount = ({navigation}: {navigation: any}) => {
                 onChangeText={handleChange('password')}
                 autoCapitalize='none'
                 autoCorrect={false}
-                secureTextEntry/>
+                secureTextEntry={!isPasswordVisible}/>
+           <TouchableOpacity 
+                style={styles.visibilityButton} 
+                onPress={() => togglePasswordVisibility('password')}>
+                <FontAwesomeIcon icon={isPasswordVisible ? faEye : faEyeSlash} size={20} color="#79796E" />
+            </TouchableOpacity>
             
             {touched.password && errors.password && (
                 <Text style={styles.errorMessage}>{errors.password}</Text>
@@ -174,7 +191,12 @@ const CreateAccount = ({navigation}: {navigation: any}) => {
             value={values.verifyPassword}
             onChangeText={handleChange('verifyPassword')}
             autoCapitalize='none'
-            secureTextEntry/>
+            secureTextEntry={!isVerifyPasswordVisible}/>
+            <TouchableOpacity 
+              style={styles.visibilityButton} 
+              onPress={() => togglePasswordVisibility('verifyPassword')}>
+             <FontAwesomeIcon icon={isVerifyPasswordVisible ? faEye : faEyeSlash} size={20} color="#79796E" />
+            </TouchableOpacity>
        
         {touched.verifyPassword && errors.verifyPassword && (
               <Text style={styles.errorMessage}>{errors.verifyPassword}</Text>
