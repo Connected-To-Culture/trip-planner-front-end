@@ -39,6 +39,11 @@ type SelectedState = {
   q6VacaRentals: boolean;
   q6Camping: boolean;
   q6notSure: boolean;
+  q7LessThanWeek: boolean;
+  q7_1_2Weeks: boolean;
+  q7_1_3Months: boolean;
+  q7_3MonthsToYear: boolean;
+  q7MoreThanYear: boolean;
 };
 
 // Define the type for the context value
@@ -87,6 +92,11 @@ const SurveyDataContext = React.createContext<SurveyDataContextType>({
     q6VacaRentals: false,
     q6Camping: false,
     q6notSure: false,
+    q7LessThanWeek: false,
+    q7_1_2Weeks: false,
+    q7_1_3Months: false,
+    q7_3MonthsToYear: false,
+    q7MoreThanYear: false,
   },
   setSelected: () => {},
 });
@@ -137,6 +147,11 @@ const SurveyDataProviderWrapper = ({
     q6VacaRentals: false,
     q6Camping: false,
     q6notSure: false,
+    q7LessThanWeek: false,
+    q7_1_2Weeks: false,
+    q7_1_3Months: false,
+    q7_3MonthsToYear: false,
+    q7MoreThanYear: false,
   });
 
   return (
