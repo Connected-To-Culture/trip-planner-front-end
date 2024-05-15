@@ -10,6 +10,7 @@ import Plan from "./plan/Plan";
 import TermsAndConditions from "./authentication/TermsAndConditions";
 import ResetPassword from "./authentication/ResetPassword";
 import CreateNewPassword from "./authentication/CreateNewPassword";
+import CheckYourEmail from "./authentication/CheckYourEmail";
 import CountryDashboard from "./explore/CountryDashboard";
 export{
     

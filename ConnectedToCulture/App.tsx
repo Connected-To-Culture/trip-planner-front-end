@@ -11,7 +11,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 
-import { CreateAccount, Welcome,Signin,TermsAndConditions,ResetPassword,CreateNewPassword,CheckYourEmail} from './screens';
+import { CreateAccount, Welcome,Signin,TermsAndConditions,ResetPassword,CheckYourEmail,CreateNewPassword} from './screens';
 import {CountryDashboard} from './screens';
 import { StatusBar,StyleSheet} from 'react-native';
 import BottomTabNavigation from './navigation/BottomTabNavigation';
