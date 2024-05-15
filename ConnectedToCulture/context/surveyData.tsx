@@ -28,6 +28,12 @@ type SelectedState = {
   q4utilizeLangTrans: boolean;
   q4planActivities: boolean;
   q4noneOfAbove: boolean;
+  q5FlightAirportInfo: boolean;
+  q5AccomOptions: boolean;
+  q5Weather: boolean;
+  q5ActivityRecs: boolean;
+  q5LangTrans: boolean;
+  q5Text: string;
 };
 
 // Define the type for the context value
@@ -65,6 +71,12 @@ const SurveyDataContext = React.createContext<SurveyDataContextType>({
     q4utilizeLangTrans: false,
     q4planActivities: false,
     q4noneOfAbove: false,
+    q5FlightAirportInfo: false,
+    q5AccomOptions: false,
+    q5Weather: false,
+    q5ActivityRecs: false,
+    q5LangTrans: false,
+    q5Text: '',
   },
   setSelected: () => {},
 });
@@ -104,6 +116,12 @@ const SurveyDataProviderWrapper = ({
     q4utilizeLangTrans: false,
     q4planActivities: false,
     q4noneOfAbove: false,
+    q5FlightAirportInfo: false,
+    q5AccomOptions: false,
+    q5Weather: false,
+    q5ActivityRecs: false,
+    q5LangTrans: false,
+    q5Text: '',
   });
 
   return (
