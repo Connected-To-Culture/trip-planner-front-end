@@ -77,7 +77,7 @@ const Survey5 = ({navigation}: Survey1Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    q5FlightAirportInfo: !selected.q5FlightAirportInfo
+                    q5FlightAirportInfo: !selected.q5FlightAirportInfo,
                   })
                 }
                 paddingHorizantal={24}
@@ -104,7 +104,7 @@ const Survey5 = ({navigation}: Survey1Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    q5AccomOptions: !selected.q5AccomOptions
+                    q5AccomOptions: !selected.q5AccomOptions,
                   })
                 }
                 paddingHorizantal={24}
@@ -153,7 +153,7 @@ const Survey5 = ({navigation}: Survey1Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    q5ActivityRecs: !selected.q5ActivityRecs
+                    q5ActivityRecs: !selected.q5ActivityRecs,
                   })
                 }
                 paddingHorizantal={24}
