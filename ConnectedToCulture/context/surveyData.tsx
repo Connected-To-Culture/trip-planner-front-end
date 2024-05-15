@@ -34,6 +34,11 @@ type SelectedState = {
   q5ActivityRecs: boolean;
   q5LangTrans: boolean;
   q5Text: string;
+  q6Hotels: boolean;
+  q6Hostels: boolean;
+  q6VacaRentals: boolean;
+  q6Camping: boolean;
+  q6notSure: boolean;
 };
 
 // Define the type for the context value
@@ -77,6 +82,11 @@ const SurveyDataContext = React.createContext<SurveyDataContextType>({
     q5ActivityRecs: false,
     q5LangTrans: false,
     q5Text: '',
+    q6Hotels: false,
+    q6Hostels: false,
+    q6VacaRentals: false,
+    q6Camping: false,
+    q6notSure: false,
   },
   setSelected: () => {},
 });
@@ -122,6 +132,11 @@ const SurveyDataProviderWrapper = ({
     q5ActivityRecs: false,
     q5LangTrans: false,
     q5Text: '',
+    q6Hotels: false,
+    q6Hostels: false,
+    q6VacaRentals: false,
+    q6Camping: false,
+    q6notSure: false,
   });
 
   return (
