@@ -95,7 +95,8 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 btnText="Historical sites"
                 onPress={() =>
                   setSelected({
-                    ...selected, q2historical: !selected.q2historical
+                    ...selected,
+                    q2historical: !selected.q2historical,
                   })
                 }
                 paddingHorizantal={24}

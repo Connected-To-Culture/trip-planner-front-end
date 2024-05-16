@@ -87,7 +87,9 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 backgroundColor={
                   selected.q3public ? COLORS.primary : COLORS.white
                 }
-                borderColor={selected.q3public ? COLORS.primary : COLORS.black400}
+                borderColor={
+                  selected.q3public ? COLORS.primary : COLORS.black400
+                }
                 borderRadius={10}
                 borderWidth={1}
                 btnText="Public transportation (e.g. bus, train)"
