@@ -11,11 +11,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
 import SurveyModal from '../../components/survey/SurveyModal';
 
-type Survey6Props = {
+type Survey8Props = {
   navigation: NavigationProp<any>;
 };
 
-const Survey6 = ({navigation}: Survey6Props) => {
+const Survey8 = ({navigation}: Survey8Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
   const [modalOpen, setModalOpen] = useState(false);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
@@ -24,6 +24,15 @@ const Survey6 = ({navigation}: Survey6Props) => {
       ? 'portrait'
       : 'landscape',
   );
+
+  const selectOne = {
+    q8_1: false,
+    q8_2: false,
+    q8_3: false,
+    q8_4: false,
+    q8_5: false,
+    q8PreferNotSay: false,
+  };
 
   useEffect(() => {
     const onChange = () => {
@@ -53,78 +62,119 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 color={COLORS.primary}
               />
             </Pressable>
-            <SurveyProgressBar progress={55} />
+            <SurveyProgressBar progress={73} />
             <Text style={surveyStyles.question}>
-              Q6. What are your preferred accommodation types?
+              Q8. What is your budget range for a typical trip?
             </Text>
-            <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
+            {/* <Text style={surveyStyles.subtitle}>(Select all that apply)</Text> */}
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
                 alignItems="left"
-                backgroundColor={
-                  selected.q6Hotels ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q6Hotels ? COLORS.primary : COLORS.black400
-                }
+                backgroundColor={selected.q8_1 ? COLORS.primary : COLORS.white}
+                borderColor={selected.q8_1 ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Hotels"
-                onPress={() =>
-                  setSelected({...selected, q6Hotels: !selected.q6Hotels})
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.q6Hotels ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                alignItems="left"
-                backgroundColor={
-                  selected.q6Hostels ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q6Hostels ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Hostels"
-                onPress={() =>
-                  setSelected({...selected, q6Hostels: !selected.q6Hostels})
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.q6Hostels ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                alignItems="left"
-                backgroundColor={
-                  selected.q6VacaRentals ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q6VacaRentals ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Vacation rentals (e.g., Airbnb)"
+                btnText="$0-$500"
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    q6VacaRentals: !selected.q6VacaRentals,
+                    ...selectOne,
+                    q8_1: !selected.q8_1,
                   })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.q6VacaRentals ? COLORS.white : COLORS.black}
+                textColor={selected.q8_1 ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                alignItems="left"
+                backgroundColor={selected.q8_2 ? COLORS.primary : COLORS.white}
+                borderColor={selected.q8_2 ? COLORS.primary : COLORS.black400}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="$500-$1,000"
+                onPress={() =>
+                  setSelected({
+                    ...selected,
+                    ...selectOne,
+                    q8_2: !selected.q8_2,
+                  })
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.q8_2 ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                alignItems="left"
+                backgroundColor={selected.q8_3 ? COLORS.primary : COLORS.white}
+                borderColor={selected.q8_3 ? COLORS.primary : COLORS.black400}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="$1,000-$1,500"
+                onPress={() =>
+                  setSelected({
+                    ...selected,
+                    ...selectOne,
+                    q8_3: !selected.q8_3,
+                  })
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.q8_3 ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                alignItems="left"
+                backgroundColor={selected.q8_4 ? COLORS.primary : COLORS.white}
+                borderColor={selected.q8_4 ? COLORS.primary : COLORS.black400}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="$1,500-$2,000"
+                onPress={() =>
+                  setSelected({
+                    ...selected,
+                    ...selectOne,
+                    q8_4: !selected.q8_4,
+                  })
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.q8_4 ? COLORS.white : COLORS.black}
+                width={
+                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                }
+              />
+              <ResuableButton
+                alignItems="left"
+                backgroundColor={selected.q8_5 ? COLORS.primary : COLORS.white}
+                borderColor={selected.q8_5 ? COLORS.primary : COLORS.black400}
+                borderRadius={10}
+                borderWidth={1}
+                btnText="$2,000+"
+                onPress={() =>
+                  setSelected({
+                    ...selected,
+                    ...selectOne,
+                    q8_5: !selected.q8_5,
+                  })
+                }
+                paddingHorizantal={24}
+                paddingVertical={13}
+                size={16}
+                textColor={selected.q8_5 ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -132,43 +182,27 @@ const Survey6 = ({navigation}: Survey6Props) => {
               <ResuableButton
                 alignItems="left"
                 backgroundColor={
-                  selected.q6Camping ? COLORS.primary : COLORS.white
+                  selected.q8PreferNotSay ? COLORS.primary : COLORS.white
                 }
                 borderColor={
-                  selected.q6Camping ? COLORS.primary : COLORS.black400
+                  selected.q8PreferNotSay ? COLORS.primary : COLORS.black400
                 }
                 borderRadius={10}
                 borderWidth={1}
-                btnText="Camping"
+                btnText="I prefer not to say"
                 onPress={() =>
-                  setSelected({...selected, q6Camping: !selected.q6Camping})
+                  setSelected({
+                    ...selected,
+                    ...selectOne,
+                    q8PreferNotSay: !selected.q8PreferNotSay,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
                 size={16}
-                textColor={selected.q6Camping ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
+                textColor={
+                  selected.q8PreferNotSay ? COLORS.white : COLORS.black
                 }
-              />
-              <ResuableButton
-                alignItems="left"
-                backgroundColor={
-                  selected.q6notSure ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q6notSure ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="I'm not sure yet"
-                onPress={() =>
-                  setSelected({...selected, q6notSure: !selected.q6notSure})
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.q6notSure ? COLORS.white : COLORS.black}
                 width={
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
@@ -188,7 +222,7 @@ const Survey6 = ({navigation}: Survey6Props) => {
               borderRadius={8}
               borderWidth={1}
               btnText="Back"
-              onPress={() => navigation.navigate('Survey5')}
+              onPress={() => navigation.navigate('Survey7')}
               paddingHorizantal={16}
               paddingVertical={8}
               size={16}
@@ -203,7 +237,7 @@ const Survey6 = ({navigation}: Survey6Props) => {
               borderRadius={8}
               borderWidth={1}
               btnText="Next"
-              onPress={() => navigation.navigate('Survey7')}
+              onPress={() => navigation.navigate('Survey9')}
               paddingHorizantal={16}
               paddingVertical={8}
               size={16}
@@ -220,4 +254,4 @@ const Survey6 = ({navigation}: Survey6Props) => {
   );
 };
 
-export default Survey6;
+export default Survey8;
