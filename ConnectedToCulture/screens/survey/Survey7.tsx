@@ -111,7 +111,7 @@ const Survey7 = ({navigation}: Survey7Props) => {
                   setSelected({
                     ...selected,
                     ...selectOne,
-                    q7_1_2Weeks: !selected.q7_1_2Weeks
+                    q7_1_2Weeks: !selected.q7_1_2Weeks,
                   })
                 }
                 paddingHorizantal={24}
@@ -204,7 +204,6 @@ const Survey7 = ({navigation}: Survey7Props) => {
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
-
             </View>
           </View>
 

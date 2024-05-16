@@ -173,7 +173,6 @@ const Survey6 = ({navigation}: Survey6Props) => {
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
-
             </View>
           </View>
 

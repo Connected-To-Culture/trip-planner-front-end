@@ -102,7 +102,7 @@ const Survey8 = ({navigation}: Survey8Props) => {
                   setSelected({
                     ...selected,
                     ...selectOne,
-                    q8_2: !selected.q8_2
+                    q8_2: !selected.q8_2,
                   })
                 }
                 paddingHorizantal={24}
@@ -207,7 +207,6 @@ const Survey8 = ({navigation}: Survey8Props) => {
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
-
             </View>
           </View>
 
