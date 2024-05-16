@@ -28,6 +28,7 @@ const SurveyStart = ({navigation}: SurveyStartProps) => {
     };
     Dimensions.addEventListener('change', onChange);
   }, []);
+
   return (
     <View style={surveyStyles.container}>
       <ScrollView
