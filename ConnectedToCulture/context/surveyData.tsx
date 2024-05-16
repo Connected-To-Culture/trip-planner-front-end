@@ -44,6 +44,12 @@ type SelectedState = {
   q7_1_3Months: boolean;
   q7_3MonthsToYear: boolean;
   q7MoreThanYear: boolean;
+  q8_1: boolean;
+  q8_2: boolean;
+  q8_3: boolean;
+  q8_4: boolean;
+  q8_5: boolean;
+  q8PreferNotSay: boolean;
 };
 
 // Define the type for the context value
@@ -97,6 +103,12 @@ const SurveyDataContext = React.createContext<SurveyDataContextType>({
     q7_1_3Months: false,
     q7_3MonthsToYear: false,
     q7MoreThanYear: false,
+    q8_1: false,
+    q8_2: false,
+    q8_3: false,
+    q8_4: false,
+    q8_5: false,
+    q8PreferNotSay: false,
   },
   setSelected: () => {},
 });
@@ -152,6 +164,12 @@ const SurveyDataProviderWrapper = ({
     q7_1_3Months: false,
     q7_3MonthsToYear: false,
     q7MoreThanYear: false,
+    q8_1: false,
+    q8_2: false,
+    q8_3: false,
+    q8_4: false,
+    q8_5: false,
+    q8PreferNotSay: false,
   });
 
   return (
