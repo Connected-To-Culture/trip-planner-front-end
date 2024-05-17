@@ -61,7 +61,7 @@ const Survey7 = ({navigation}: Survey7Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q7LessThanWeek ? COLORS.primary : COLORS.white
                 }
@@ -88,7 +88,7 @@ const Survey7 = ({navigation}: Survey7Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q7_1_2Weeks ? COLORS.primary : COLORS.white
                 }
@@ -113,7 +113,7 @@ const Survey7 = ({navigation}: Survey7Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q7_1_3Months ? COLORS.primary : COLORS.white
                 }
@@ -138,7 +138,7 @@ const Survey7 = ({navigation}: Survey7Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q7_3MonthsToYear ? COLORS.primary : COLORS.white
                 }
@@ -165,7 +165,7 @@ const Survey7 = ({navigation}: Survey7Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q7MoreThanYear ? COLORS.primary : COLORS.white
                 }

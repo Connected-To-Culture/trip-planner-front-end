@@ -61,7 +61,7 @@ const Survey10 = ({navigation}: Survey10Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q10English ? COLORS.primary : COLORS.white
                 }
@@ -83,7 +83,7 @@ const Survey10 = ({navigation}: Survey10Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q10French ? COLORS.primary : COLORS.white
                 }
@@ -105,7 +105,7 @@ const Survey10 = ({navigation}: Survey10Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q10Arabic ? COLORS.primary : COLORS.white
                 }
@@ -127,7 +127,7 @@ const Survey10 = ({navigation}: Survey10Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q10Spanish ? COLORS.primary : COLORS.white
                 }

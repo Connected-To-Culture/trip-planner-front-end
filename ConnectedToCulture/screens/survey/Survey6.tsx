@@ -68,7 +68,7 @@ const Survey6 = ({navigation}: Survey6Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q6Hotels ? COLORS.primary : COLORS.white
                 }
@@ -94,7 +94,7 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q6Hostels ? COLORS.primary : COLORS.white
                 }
@@ -120,7 +120,7 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q6VacaRentals ? COLORS.primary : COLORS.white
                 }
@@ -146,7 +146,7 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q6Camping ? COLORS.primary : COLORS.white
                 }
@@ -172,7 +172,7 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q6notSure ? COLORS.primary : COLORS.white
                 }

@@ -81,7 +81,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q3airplane ? COLORS.primary : COLORS.white
                 }
@@ -107,7 +107,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q3public ? COLORS.primary : COLORS.white
                 }
@@ -133,7 +133,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q3car ? COLORS.primary : COLORS.white}
                 borderColor={selected.q3car ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -155,7 +155,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q3bicycle ? COLORS.primary : COLORS.white
                 }
@@ -181,7 +181,7 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q3notSure ? COLORS.primary : COLORS.white
                 }

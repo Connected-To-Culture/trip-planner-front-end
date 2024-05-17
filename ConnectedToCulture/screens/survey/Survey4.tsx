@@ -70,7 +70,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q4exploreDest ? COLORS.primary : COLORS.white
                 }
@@ -96,7 +96,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q4recieveFlightInfo ? COLORS.primary : COLORS.white
                 }
@@ -126,7 +126,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q4accessAirportInfo ? COLORS.primary : COLORS.white
                 }
@@ -156,7 +156,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q4findAccom ? COLORS.primary : COLORS.white
                 }
@@ -182,7 +182,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q4utilizeLangTrans ? COLORS.primary : COLORS.white
                 }
@@ -210,7 +210,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q4planActivities ? COLORS.primary : COLORS.white
                 }
@@ -238,7 +238,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q4noneOfAbove ? COLORS.primary : COLORS.white
                 }

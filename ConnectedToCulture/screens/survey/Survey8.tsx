@@ -70,7 +70,7 @@ const Survey8 = ({navigation}: Survey8Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q8_1 ? COLORS.primary : COLORS.white}
                 borderColor={selected.q8_1 ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -92,7 +92,7 @@ const Survey8 = ({navigation}: Survey8Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q8_2 ? COLORS.primary : COLORS.white}
                 borderColor={selected.q8_2 ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -114,7 +114,7 @@ const Survey8 = ({navigation}: Survey8Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q8_3 ? COLORS.primary : COLORS.white}
                 borderColor={selected.q8_3 ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -136,7 +136,7 @@ const Survey8 = ({navigation}: Survey8Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q8_4 ? COLORS.primary : COLORS.white}
                 borderColor={selected.q8_4 ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -158,7 +158,7 @@ const Survey8 = ({navigation}: Survey8Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q8_5 ? COLORS.primary : COLORS.white}
                 borderColor={selected.q8_5 ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -180,7 +180,7 @@ const Survey8 = ({navigation}: Survey8Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q8PreferNotSay ? COLORS.primary : COLORS.white
                 }

@@ -62,7 +62,7 @@ const Survey5 = ({navigation}: Survey5Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q5FlightAirportInfo ? COLORS.primary : COLORS.white
                 }
@@ -91,7 +91,7 @@ const Survey5 = ({navigation}: Survey5Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q5AccomOptions ? COLORS.primary : COLORS.white
                 }
@@ -118,7 +118,7 @@ const Survey5 = ({navigation}: Survey5Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q5Weather ? COLORS.primary : COLORS.white
                 }
@@ -140,7 +140,7 @@ const Survey5 = ({navigation}: Survey5Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q5ActivityRecs ? COLORS.primary : COLORS.white
                 }
@@ -167,7 +167,7 @@ const Survey5 = ({navigation}: Survey5Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q5LangTrans ? COLORS.primary : COLORS.white
                 }

@@ -76,7 +76,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q1NG ? COLORS.primary : COLORS.white}
                 borderColor={selected.q1NG ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -92,7 +92,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q1ET ? COLORS.primary : COLORS.white}
                 borderColor={selected.q1ET ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -108,7 +108,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q1TG ? COLORS.primary : COLORS.white}
                 borderColor={selected.q1TG ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -124,7 +124,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q1ZA ? COLORS.primary : COLORS.white}
                 borderColor={selected.q1ZA ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -140,7 +140,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={selected.q1GH ? COLORS.primary : COLORS.white}
                 borderColor={selected.q1GH ? COLORS.primary : COLORS.black400}
                 borderRadius={10}
@@ -156,7 +156,7 @@ const Survey1 = ({navigation}: Survey1Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q1Zambia ? COLORS.primary : COLORS.white
                 }

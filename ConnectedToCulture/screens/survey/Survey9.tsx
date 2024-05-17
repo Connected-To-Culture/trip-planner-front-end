@@ -69,7 +69,7 @@ const Survey9 = ({navigation}: Survey9Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q9Solo ? COLORS.primary : COLORS.white
                 }
@@ -93,7 +93,7 @@ const Survey9 = ({navigation}: Survey9Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q9Family ? COLORS.primary : COLORS.white
                 }
@@ -119,7 +119,7 @@ const Survey9 = ({navigation}: Survey9Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q9Friends ? COLORS.primary : COLORS.white
                 }
@@ -145,7 +145,7 @@ const Survey9 = ({navigation}: Survey9Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q9Partner ? COLORS.primary : COLORS.white
                 }
@@ -171,7 +171,7 @@ const Survey9 = ({navigation}: Survey9Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q9Group ? COLORS.primary : COLORS.white
                 }
