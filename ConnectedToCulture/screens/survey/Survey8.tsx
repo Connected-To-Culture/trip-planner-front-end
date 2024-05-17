@@ -66,7 +66,7 @@ const Survey8 = ({navigation}: Survey8Props) => {
             <Text style={surveyStyles.question}>
               Q8. What is your budget range for a typical trip?
             </Text>
-            {/* <Text style={surveyStyles.subtitle}>(Select all that apply)</Text> */}
+            <Text style={surveyStyles.subtitle}>(Select only one)</Text>
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
