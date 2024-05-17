@@ -27,7 +27,18 @@ const surveyStyles = StyleSheet.create({
     padding: 20,
   },
   description: {
-    color: COLORS.darkGray,
+    color: COLORS.black400,
+    fontFamily: 'Almarai',
+    fontSize: 16,
+    fontWeight: '400',
+    letterSpacing: 0,
+    lineHeight: 19.2,
+    marginBottom: 16,
+    paddingBottom: 0,
+    textAlign: 'center',
+  },
+  descriptionSurveyEnd: {
+    color: COLORS.black,
     fontFamily: 'Almarai',
     fontSize: 16,
     fontWeight: '400',
@@ -127,6 +138,15 @@ const surveyStyles = StyleSheet.create({
     letterSpacing: 0,
     lineHeight: 28.8,
     paddingBottom: 0,
+  },
+  titleSurveyEnd: {
+    color: COLORS.black,
+    fontFamily: 'Almarai',
+    fontSize: 24,
+    fontWeight: '700',
+    letterSpacing: 0,
+    lineHeight: 28.8,
+    paddingBottom: 15,
   },
 });
 
