@@ -55,6 +55,11 @@ type SelectedState = {
   q9Friends: boolean;
   q9Partner: boolean;
   q9Group: boolean;
+  q10English: boolean;
+  q10French: boolean;
+  q10Arabic: boolean;
+  q10Spanish: boolean;
+  q10Text: string;
 };
 
 // Define the type for the context value
@@ -119,6 +124,11 @@ const SurveyDataContext = React.createContext<SurveyDataContextType>({
     q9Friends: false,
     q9Partner: false,
     q9Group: false,
+    q10English: false,
+    q10French: false,
+    q10Arabic: false,
+    q10Spanish: false,
+    q10Text: '',
   },
   setSelected: () => {},
 });
@@ -185,6 +195,11 @@ const SurveyDataProviderWrapper = ({
     q9Friends: false,
     q9Partner: false,
     q9Group: false,
+    q10English: false,
+    q10French: false,
+    q10Arabic: false,
+    q10Spanish: false,
+    q10Text: '',
   });
 
   return (
