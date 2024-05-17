@@ -10,6 +10,7 @@ import Survey5 from '../../screens/survey/Survey5';
 import Survey6 from '../../screens/survey/Survey6';
 import Survey7 from '../../screens/survey/Survey7';
 import Survey8 from '../../screens/survey/Survey8';
+import Survey9 from '../../screens/survey/Survey9';
 import {SurveyDataProviderWrapper} from '../../context/surveyData';
 
 const Stack = createNativeStackNavigator();
@@ -62,6 +63,11 @@ const SurveyNavigator = () => {
           <Stack.Screen
             name="Survey8"
             component={Survey8}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Survey9"
+            component={Survey9}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
