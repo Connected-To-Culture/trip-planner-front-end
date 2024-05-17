@@ -18,6 +18,7 @@ type Survey3Props = {
 const Survey3 = ({navigation}: Survey3Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
   const [modalOpen, setModalOpen] = useState(false);
+  const [disabled, setDisabled] = useState(true);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
@@ -38,8 +39,20 @@ const Survey3 = ({navigation}: Survey3Props) => {
       setOrientation(height > width ? 'portrait' : 'landscape');
       setCurWidth(width);
     };
-    Dimensions.addEventListener('change', onChange);
+    const subscription = Dimensions.addEventListener('change', onChange);
+    return () => subscription?.remove();
   }, []);
+
+  useEffect(() => {
+    const shouldEnableButton =
+      selected.q3airplane ||
+      selected.q3public ||
+      selected.q3car ||
+      selected.q3bicycle ||
+      selected.q3notSure;
+
+    setDisabled(!shouldEnableButton);
+  }, [selected]);
 
   return (
     <View style={surveyStyles.container}>
@@ -218,11 +231,12 @@ const Survey3 = ({navigation}: Survey3Props) => {
               }
             />
             <ResuableButton
-              backgroundColor={COLORS.primary}
-              borderColor={COLORS.primary}
+              backgroundColor={disabled ? COLORS.darkGray : COLORS.primary}
+              borderColor={disabled ? COLORS.darkGray : COLORS.primary}
               borderRadius={8}
               borderWidth={1}
-              btnText="Next"
+              btnText={disabled ? '🚫' : 'Next'}
+              disabled={disabled}
               onPress={() => navigation.navigate('Survey4')}
               paddingHorizantal={16}
               paddingVertical={8}
