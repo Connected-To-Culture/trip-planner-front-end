@@ -1,7 +1,7 @@
-import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import React from 'react';
+import {View, Text, TouchableOpacity, StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import COLORS from '../../../constants/theme';
-import { Dimensions } from 'react-native';
+import {Dimensions} from 'react-native';
 // Get the dimensions of the screen
 const windowHeight = Dimensions.get('window').height;
 
