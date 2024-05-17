@@ -34,7 +34,7 @@ const SurveyStart = ({navigation}: SurveyStartProps) => {
       <ScrollView
         contentContainerStyle={[
           styles.surveyStartExtraContainerStyles,
-          {flex: orientation === 'landscape' ? undefined : 1}
+          {flex: orientation === 'landscape' ? undefined : 1},
         ]}>
         <Pressable
           style={surveyStyles.modalXContainer}
