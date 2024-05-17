@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import COLORS from '../../../constants/theme';
 import {Dimensions} from 'react-native';
 // Get the dimensions of the screen
@@ -16,9 +17,9 @@ interface Props {
   paddingHorizantal: number;
   paddingVertical: number;
   size: number;
-  borderRadius: number;
-  alignItems: string;
-  disabled: boolean;
+  borderRadius?: number;
+  alignItems?: string;
+  disabled?: boolean;
 }
 
 const ResuableButton: React.FC<Props> = ({
@@ -32,8 +33,8 @@ const ResuableButton: React.FC<Props> = ({
   paddingHorizantal,
   paddingVertical,
   size,
-  borderRadius,
-  alignItems,
+  borderRadius = 5,
+  alignItems = 'center',
   disabled = false,
 }) => {
   const defaultBorderColor =
@@ -51,10 +52,10 @@ const ResuableButton: React.FC<Props> = ({
       typeof backgroundColor === 'string'
         ? backgroundColor
         : COLORS[backgroundColor],
-    alignItems: alignItems || 'center',
+    alignItems: alignItems,
     justifyContent: 'center',
     height: 'auto',
-    borderRadius: borderRadius || 5,
+    borderRadius: borderRadius,
     borderColor:
       typeof defaultBorderColor === 'string'
         ? defaultBorderColor
