@@ -25,6 +25,13 @@ const Survey6 = ({navigation}: Survey6Props) => {
       : 'landscape',
   );
 
+  const deselect = {
+    q6Hotels: false,
+    q6Hostels: false,
+    q6VacaRentals: false,
+    q6Camping: false,
+  };
+
   useEffect(() => {
     const onChange = () => {
       const {height, width} = Dimensions.get('window');
@@ -72,7 +79,11 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 borderWidth={1}
                 btnText="Hotels"
                 onPress={() =>
-                  setSelected({...selected, q6Hotels: !selected.q6Hotels})
+                  setSelected({
+                    ...selected,
+                    q6notSure: false,
+                    q6Hotels: !selected.q6Hotels,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
@@ -94,7 +105,11 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 borderWidth={1}
                 btnText="Hostels"
                 onPress={() =>
-                  setSelected({...selected, q6Hostels: !selected.q6Hostels})
+                  setSelected({
+                    ...selected,
+                    q6notSure: false,
+                    q6Hostels: !selected.q6Hostels,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
@@ -118,6 +133,7 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
+                    q6notSure: false,
                     q6VacaRentals: !selected.q6VacaRentals,
                   })
                 }
@@ -141,7 +157,11 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 borderWidth={1}
                 btnText="Camping"
                 onPress={() =>
-                  setSelected({...selected, q6Camping: !selected.q6Camping})
+                  setSelected({
+                    ...selected,
+                    q6notSure: false,
+                    q6Camping: !selected.q6Camping,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
@@ -163,7 +183,11 @@ const Survey6 = ({navigation}: Survey6Props) => {
                 borderWidth={1}
                 btnText="I'm not sure yet"
                 onPress={() =>
-                  setSelected({...selected, q6notSure: !selected.q6notSure})
+                  setSelected({
+                    ...selected,
+                    ...deselect,
+                    q6notSure: !selected.q6notSure,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
