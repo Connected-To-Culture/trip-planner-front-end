@@ -25,6 +25,15 @@ const Survey4 = ({navigation}: Survey4Props) => {
       : 'landscape',
   );
 
+  const deselect = {
+    q4exploreDest: false,
+    q4recieveFlightInfo: false,
+    q4accessAirportInfo: false,
+    q4findAccom: false,
+    q4utilizeLangTrans: false,
+    q4planActivities: false,
+  };
+
   useEffect(() => {
     const onChange = () => {
       const {height, width} = Dimensions.get('window');
@@ -74,6 +83,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
+                    q4noneOfAbove: false,
                     q4exploreDest: !selected.q4exploreDest,
                   })
                 }
@@ -101,6 +111,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
+                    q4noneOfAbove: false,
                     q4recieveFlightInfo: !selected.q4recieveFlightInfo,
                   })
                 }
@@ -130,6 +141,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
+                    q4noneOfAbove: false,
                     q4accessAirportInfo: !selected.q4accessAirportInfo,
                   })
                 }
@@ -155,7 +167,11 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 borderWidth={1}
                 btnText="Find accomondations"
                 onPress={() =>
-                  setSelected({...selected, q4findAccom: !selected.q4findAccom})
+                  setSelected({
+                    ...selected,
+                    q4noneOfAbove: false,
+                    q4findAccom: !selected.q4findAccom,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
@@ -179,6 +195,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
+                    q4noneOfAbove: false,
                     q4utilizeLangTrans: !selected.q4utilizeLangTrans,
                   })
                 }
@@ -206,6 +223,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
+                    q4noneOfAbove: false,
                     q4planActivities: !selected.q4planActivities,
                   })
                 }
@@ -233,6 +251,7 @@ const Survey4 = ({navigation}: Survey4Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
+                    ...deselect,
                     q4noneOfAbove: !selected.q4noneOfAbove,
                   })
                 }
