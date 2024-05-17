@@ -25,14 +25,6 @@ const Survey7 = ({navigation}: Survey7Props) => {
       : 'landscape',
   );
 
-  const selectOne = {
-    q7LessThanWeek: false,
-    q7_1_2Weeks: false,
-    q7_1_3Months: false,
-    q7_3MonthsToYear: false,
-    q7MoreThanYear: false,
-  };
-
   useEffect(() => {
     const onChange = () => {
       const {height, width} = Dimensions.get('window');
@@ -65,7 +57,7 @@ const Survey7 = ({navigation}: Survey7Props) => {
             <Text style={surveyStyles.question}>
               Q7. How long do you typically plan your trips in advance?
             </Text>
-            {/* <Text style={surveyStyles.subtitle}>(Select all that apply)</Text> */}
+            <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
@@ -82,7 +74,6 @@ const Survey7 = ({navigation}: Survey7Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    ...selectOne,
                     q7LessThanWeek: !selected.q7LessThanWeek,
                   })
                 }
@@ -110,7 +101,6 @@ const Survey7 = ({navigation}: Survey7Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    ...selectOne,
                     q7_1_2Weeks: !selected.q7_1_2Weeks,
                   })
                 }
@@ -136,7 +126,6 @@ const Survey7 = ({navigation}: Survey7Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    ...selectOne,
                     q7_1_3Months: !selected.q7_1_3Months,
                   })
                 }
@@ -162,7 +151,6 @@ const Survey7 = ({navigation}: Survey7Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    ...selectOne,
                     q7_3MonthsToYear: !selected.q7_3MonthsToYear,
                   })
                 }
@@ -190,7 +178,6 @@ const Survey7 = ({navigation}: Survey7Props) => {
                 onPress={() =>
                   setSelected({
                     ...selected,
-                    ...selectOne,
                     q7MoreThanYear: !selected.q7MoreThanYear,
                   })
                 }
