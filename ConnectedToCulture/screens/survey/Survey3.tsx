@@ -25,6 +25,13 @@ const Survey3 = ({navigation}: Survey3Props) => {
       : 'landscape',
   );
 
+  const deselect = {
+    q3airplane: false,
+    q3public: false,
+    q3car: false,
+    q3bicycle: false,
+  };
+
   useEffect(() => {
     const onChange = () => {
       const {height, width} = Dimensions.get('window');
@@ -72,7 +79,11 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 borderWidth={1}
                 btnText="Airplane"
                 onPress={() =>
-                  setSelected({...selected, q3airplane: !selected.q3airplane})
+                  setSelected({
+                    ...selected,
+                    q3notSure: false,
+                    q3airplane: !selected.q3airplane,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
@@ -94,7 +105,11 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 borderWidth={1}
                 btnText="Public transportation (e.g. bus, train)"
                 onPress={() =>
-                  setSelected({...selected, q3public: !selected.q3public})
+                  setSelected({
+                    ...selected,
+                    q3notSure: false,
+                    q3public: !selected.q3public,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
@@ -112,7 +127,11 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 borderWidth={1}
                 btnText="Car"
                 onPress={() =>
-                  setSelected({...selected, q3car: !selected.q3car})
+                  setSelected({
+                    ...selected,
+                    q3notSure: false,
+                    q3car: !selected.q3car,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
@@ -134,7 +153,11 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 borderWidth={1}
                 btnText="Bicycle"
                 onPress={() =>
-                  setSelected({...selected, q3bicycle: !selected.q3bicycle})
+                  setSelected({
+                    ...selected,
+                    q3notSure: false,
+                    q3bicycle: !selected.q3bicycle,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
@@ -156,7 +179,11 @@ const Survey3 = ({navigation}: Survey3Props) => {
                 borderWidth={1}
                 btnText="I'm not sure yet"
                 onPress={() =>
-                  setSelected({...selected, q3notSure: !selected.q3notSure})
+                  setSelected({
+                    ...selected,
+                    ...deselect,
+                    q3notSure: !selected.q3notSure,
+                  })
                 }
                 paddingHorizantal={24}
                 paddingVertical={13}
