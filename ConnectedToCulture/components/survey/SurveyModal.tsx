@@ -2,8 +2,9 @@ import React from 'react';
 import {Modal, View, Text, TouchableOpacity} from 'react-native';
 import ReusableButton from '../reusable/reusableButton/ReusableButton';
 import COLORS from '../../constants/theme';
-import {useNavigation} from '@react-navigation/native';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 import surveyModalStyles from './surveyModal.style';
+import {RootStackParamList} from '../../navigation/types';
 
 type SurveyModalProps = {
   visible: boolean;
@@ -11,7 +12,7 @@ type SurveyModalProps = {
 };
 
 const SurveyModal: React.FC<SurveyModalProps> = ({visible, onClose}) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
     <Modal
       visible={visible}
@@ -50,7 +51,7 @@ const SurveyModal: React.FC<SurveyModalProps> = ({visible, onClose}) => {
                 btnText="Leave"
                 onPress={() => {
                   onClose();
-                  navigation.navigate('BottomNavigation');
+                  navigation.navigate('Home');
                 }}
                 paddingHorizantal={32}
                 paddingVertical={8}
