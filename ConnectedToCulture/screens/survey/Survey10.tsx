@@ -193,7 +193,7 @@ const Survey10 = ({navigation}: Survey10Props) => {
               borderColor={COLORS.primary}
               borderRadius={8}
               borderWidth={1}
-              btnText="Next"
+              btnText="Complete"
               onPress={() => navigation.navigate('SurveyEnd')}
               paddingHorizantal={16}
               paddingVertical={8}
