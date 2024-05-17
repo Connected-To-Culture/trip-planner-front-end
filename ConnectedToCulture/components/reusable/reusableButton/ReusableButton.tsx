@@ -1,8 +1,14 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextStyle,
+  ViewStyle,
+  Dimensions,
+  FlexAlignType,
+} from 'react-native';
 import COLORS from '../../../constants/theme';
-import {Dimensions} from 'react-native';
 // Get the dimensions of the screen
 const windowHeight = Dimensions.get('window').height;
 
@@ -18,7 +24,7 @@ interface Props {
   paddingVertical: number;
   size: number;
   borderRadius?: number;
-  alignItems?: string;
+  alignItems?: FlexAlignType;
   disabled?: boolean;
 }
 
