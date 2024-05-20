@@ -18,6 +18,7 @@ type Survey2Props = {
 const Survey2 = ({navigation}: Survey2Props) => {
   const {selected, setSelected} = useContext(SurveyDataContext);
   const [modalOpen, setModalOpen] = useState(false);
+  const [disabled, setDisabled] = useState(true);
   const [curWidth, setCurWidth] = useState(Dimensions.get('window').width);
   const [orientation, setOrientation] = useState(
     Dimensions.get('window').height > Dimensions.get('window').width
@@ -31,8 +32,22 @@ const Survey2 = ({navigation}: Survey2Props) => {
       setOrientation(height > width ? 'portrait' : 'landscape');
       setCurWidth(width);
     };
-    Dimensions.addEventListener('change', onChange);
+    const subscription = Dimensions.addEventListener('change', onChange);
+    return () => subscription?.remove();
   }, []);
+
+  useEffect(() => {
+    const shouldEnableButton =
+      selected.q2wildlife ||
+      selected.q2historical ||
+      selected.q2cultural ||
+      selected.q2adventure ||
+      selected.q2food ||
+      selected.q2entertainment ||
+      (selected.q2Text && selected.q2Text.length > 0);
+
+    setDisabled(!shouldEnableButton);
+  }, [selected]);
 
   return (
     <View style={surveyStyles.container}>
@@ -61,7 +76,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
 
             <View style={surveyStyles.surveyBtnsContainer}>
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q2wildlife ? COLORS.primary : COLORS.white
                 }
@@ -83,7 +98,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q2historical ? COLORS.primary : COLORS.white
                 }
@@ -108,7 +123,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q2cultural ? COLORS.primary : COLORS.white
                 }
@@ -130,7 +145,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q2adventure ? COLORS.primary : COLORS.white
                 }
@@ -152,7 +167,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q2food ? COLORS.primary : COLORS.white
                 }
@@ -172,7 +187,7 @@ const Survey2 = ({navigation}: Survey2Props) => {
                 }
               />
               <ResuableButton
-                alignItems="left"
+                alignItems="flex-start"
                 backgroundColor={
                   selected.q2entertainment ? COLORS.primary : COLORS.white
                 }
@@ -239,11 +254,12 @@ const Survey2 = ({navigation}: Survey2Props) => {
               }
             />
             <ResuableButton
-              backgroundColor={COLORS.primary}
-              borderColor={COLORS.primary}
+              backgroundColor={disabled ? COLORS.darkGray : COLORS.primary}
+              borderColor={disabled ? COLORS.darkGray : COLORS.primary}
               borderRadius={8}
               borderWidth={1}
-              btnText="Next"
+              btnText={disabled ? '🚫' : 'Next'}
+              disabled={disabled}
               onPress={() => navigation.navigate('Survey3')}
               paddingHorizantal={16}
               paddingVertical={8}
