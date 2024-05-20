@@ -7,15 +7,18 @@ import HeightSpacer from '../reusable/HeightSpacer'
 import { ReusableButton } from '..'
 import styles from './home.style'
 import { NavigationProp } from '@react-navigation/native'
+
 const { height, width } = Dimensions.get('window');
 interface Props {
-   
+
   navigation: NavigationProp<any>; // Use NavigationProp
-  
+
 }
 
 
 const NoTripPlan :React.FC<Props> = ({navigation})  => {
+
+
   return (
     <View style={styles.NoTripCompanentContainer}>
       <View style={styles.imageContainer}>
@@ -46,7 +49,7 @@ const NoTripPlan :React.FC<Props> = ({navigation})  => {
             width={width*0.3}
             paddingHorizantal={10}
             paddingVertical={5}
-            onPress={()=>navigation.navigate('Welcome')}
+            onPress={()=>navigation.navigate('SurveyNavigator')}
 
         />
       </View>
@@ -69,4 +72,3 @@ const NoTripPlan :React.FC<Props> = ({navigation})  => {
 }
 
 export default NoTripPlan
-

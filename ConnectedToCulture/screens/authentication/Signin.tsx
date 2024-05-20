@@ -23,21 +23,21 @@ const validationSchema = Yup.object().shape({
     .min(8, 'Password must be 8 chracters')
     .required('Required'),
 
-        
+
   })
 
 const Signin = ({navigation}: {navigation: any}) => {
   const [isSelected, setSelection] = useState(false);
- 
+
   return (
     <ImageBackground
     source={require('../../assets/images/country/ghana/owen-oj-n8is7rTXrbE-unsplash.jpg')}
     style={styles.background}>
      <View style={[styles.container,styles.overlay]}>
-        
+
         <View style={styles.logoContainer}>
             <Image style={styles.logo} source={require('../../assets/images/logos/c2c.png')}/>
-        </View>  
+        </View>
         <Formik<FormModel>
 
         initialValues={{
@@ -52,10 +52,10 @@ const Signin = ({navigation}: {navigation: any}) => {
               handleSubmit,
               values,
               errors,
-              setFieldTouched})=>(    
+              setFieldTouched})=>(
         <>
     <View style={styles.wrapper}>
-    
+
     <TextInput style={styles.inputWrapper} placeholder='Username' placeholderTextColor={'#79796E'}
      onFocus={()=>setFieldTouched('userName')}
      onBlur={()=>setFieldTouched('userName')}
@@ -67,8 +67,8 @@ const Signin = ({navigation}: {navigation: any}) => {
     {touched.userName && errors.userName && (
               <Text style={styles.errorMessage}>{errors.userName}</Text>
             )}
-   
-       
+
+
     <View style={[styles.wrapper,{marginBottom:3}]}>
    <View>
    <TextInput style={styles.inputWrapper} placeholder='Password' placeholderTextColor={'#79796E'}
@@ -101,11 +101,11 @@ const Signin = ({navigation}: {navigation: any}) => {
     </View>
     </View>
     <HeightSpacer height={20}/>
-         
+
     <View style={styles.btnWrapper}>
     <ReusableButton onPress={()=>navigation.navigate('Welcome')}
-                 btnText='Sign In' 
-                 width={'50%'}
+                 btnText='Sign In'
+                 width={197}
                  textColor={COLORS.white}
                  size={14}
                  backgroundColor={COLORS.primaryDark}
@@ -118,7 +118,7 @@ const Signin = ({navigation}: {navigation: any}) => {
   <View style={[styles.wrapper,{alignItems:'center'}]}>
             <Text style={[styles.commonTextSignIn]}>Or Sign In Using</Text>
   </View>
-        
+
   <LoginButtons/>
 
   <View style={[styles.wrapper,{alignItems:'center',paddingTop:20}]}>
@@ -126,8 +126,8 @@ const Signin = ({navigation}: {navigation: any}) => {
   </View>
   <View style={styles.btnWrapper}>
   <ReusableButton onPress={()=>navigation.navigate('CreateAccount')}
-                 btnText='Create New Account' 
-                 width={'45%'}
+                 btnText='Create New Account'
+                 width={166}
                  textColor={COLORS.primaryDark}
                  size={14}
                  backgroundColor={COLORS.utilityYellow}
@@ -140,11 +140,11 @@ const Signin = ({navigation}: {navigation: any}) => {
   </>
     )}
   </Formik>
-  
 
-    
-  
- 
+
+
+
+
   </View>
   </ImageBackground>
   )
