@@ -88,11 +88,13 @@ const surveyStyles = StyleSheet.create({
     alignSelf: 'center',
   },
   specifyOtherContainer: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     display: 'flex',
-    gap: 10,
-    flexDirection: 'row',
-    marginTop: 10,
+    flexDirection: 'column',
+    gap: 5,
+    marginTop: 12,
+    paddingLeft: 3,
+    width: '100%',
   },
   subContainer: {
     display: 'flex',
@@ -129,6 +131,7 @@ const surveyStyles = StyleSheet.create({
     borderWidth: 1,
     height: 38,
     paddingLeft: 10,
+    width: '100%',
   },
   title: {
     color: COLORS.primary,

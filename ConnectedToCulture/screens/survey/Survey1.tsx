@@ -177,22 +177,18 @@ const Survey1 = ({navigation}: Survey1Props) => {
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
-
-              <View style={surveyStyles.specifyOtherContainer}>
-                <Text style={surveyStyles.otherText}>
-                  Other (please specify):
-                </Text>
-                <TextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  onChangeText={text =>
-                    setSelected({...selected, q1Text: text})
-                  }
-                  style={surveyStyles.textInput}
-                  width={curWidth * 0.5}
-                  value={selected.q1Text}
-                />
-              </View>
+            </View>
+            <View style={surveyStyles.specifyOtherContainer}>
+              <Text style={surveyStyles.otherText}>
+                Other (please specify):
+              </Text>
+              <TextInput
+                autoCapitalize="none"
+                autoCorrect={false}
+                onChangeText={text => setSelected({...selected, q1Text: text})}
+                style={surveyStyles.textInput}
+                value={selected.q1Text}
+              />
             </View>
           </View>
 

@@ -161,22 +161,19 @@ const Survey10 = ({navigation}: Survey10Props) => {
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
+            </View>
 
-              <View style={surveyStyles.specifyOtherContainer}>
-                <Text style={surveyStyles.otherText}>
-                  Other (please specify):
-                </Text>
-                <TextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  onChangeText={text =>
-                    setSelected({...selected, q10Text: text})
-                  }
-                  style={surveyStyles.textInput}
-                  width={curWidth * 0.5}
-                  value={selected.q10Text}
-                />
-              </View>
+            <View style={surveyStyles.specifyOtherContainer}>
+              <Text style={surveyStyles.otherText}>
+                Other (please specify):
+              </Text>
+              <TextInput
+                autoCapitalize="none"
+                autoCorrect={false}
+                onChangeText={text => setSelected({...selected, q10Text: text})}
+                style={surveyStyles.textInput}
+                value={selected.q10Text}
+              />
             </View>
           </View>
 

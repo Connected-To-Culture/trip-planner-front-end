@@ -213,22 +213,19 @@ const Survey2 = ({navigation}: Survey2Props) => {
                   orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
                 }
               />
+            </View>
 
-              <View style={surveyStyles.specifyOtherContainer}>
-                <Text style={surveyStyles.otherText}>
-                  Other (please specify):
-                </Text>
-                <TextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  onChangeText={text =>
-                    setSelected({...selected, q2Text: text})
-                  }
-                  style={surveyStyles.textInput}
-                  width={curWidth * 0.5}
-                  value={selected.q2Text}
-                />
-              </View>
+            <View style={surveyStyles.specifyOtherContainer}>
+              <Text style={surveyStyles.otherText}>
+                Other (please specify):
+              </Text>
+              <TextInput
+                autoCapitalize="none"
+                autoCorrect={false}
+                onChangeText={text => setSelected({...selected, q2Text: text})}
+                style={surveyStyles.textInput}
+                value={selected.q2Text}
+              />
             </View>
           </View>
 
