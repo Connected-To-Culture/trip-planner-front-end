@@ -18,6 +18,7 @@ import COLORS from './constants/theme';
 import SurveyNavigator from './components/survey/SurveyNavigator';
 import exploreCountry from './screens/exploreCountry/exploreCountry';
 import MoreExplore from './screens/explore/moreExplore/moreExplore';
+import {SurveyDataProviderWrapper} from './context/surveyData';
 
 function App(): React.JSX.Element {
  // Set the status bar background color
@@ -28,20 +29,21 @@ StatusBar.setBarStyle('dark-content');
 
   const Stack=createNativeStackNavigator();
   return (
-
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name='Signin' component={Signin} options={{headerShown:false}} />
-      <Stack.Screen name='CreateAccount' component={CreateAccount} options={{headerShown:false}} />
-      <Stack.Screen name='TermsAndConditions' component={TermsAndConditions} options={{headerShown:false}} />
-      <Stack.Screen name='ResetPassword' component={ResetPassword} options={{headerShown:false}} />
-      <Stack.Screen name='BottomNavigation' component={BottomTabNavigation} options={{headerShown:false}} />
-      <Stack.Screen name='Welcome' component={Welcome} options={{headerShown:false}} />
-      <Stack.Screen name='SurveyNavigator' component={SurveyNavigator} options={{headerShown:false}} />
-      <Stack.Screen name='explore-country' component={exploreCountry} options={{headerShown:false}} />
-      <Stack.Screen name='more-explore' component={MoreExplore} options={{headerShown:false}} />
-    </Stack.Navigator>
-  </NavigationContainer>
+    <SurveyDataProviderWrapper>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='Signin' component={Signin} options={{headerShown:false}} />
+          <Stack.Screen name='CreateAccount' component={CreateAccount} options={{headerShown:false}} />
+          <Stack.Screen name='TermsAndConditions' component={TermsAndConditions} options={{headerShown:false}} />
+          <Stack.Screen name='ResetPassword' component={ResetPassword} options={{headerShown:false}} />
+          <Stack.Screen name='BottomNavigation' component={BottomTabNavigation} options={{headerShown:false}} />
+          <Stack.Screen name='Welcome' component={Welcome} options={{headerShown:false}} />
+          <Stack.Screen name='SurveyNavigator' component={SurveyNavigator} options={{headerShown:false}} />
+          <Stack.Screen name='explore-country' component={exploreCountry} options={{headerShown:false}} />
+          <Stack.Screen name='more-explore' component={MoreExplore} options={{headerShown:false}} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SurveyDataProviderWrapper>
   );
 }
 
