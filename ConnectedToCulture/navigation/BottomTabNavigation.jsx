@@ -2,6 +2,7 @@ import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import {Home,Profile,Plan,Explore} from '../screens';
+import PlanStackNavigation from '../screens/plan/PlanStackNavigation';
 import { Recommendations } from '../components';
 import { Welcome } from '../screens';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
@@ -23,8 +24,8 @@ const tabBarStyle={
 }
 const BottomTabNavigation = () => {
   return (
-   
-        <Tab.Navigator 
+
+        <Tab.Navigator
             initialRouteName='Welcome'
             activeColor='#eb6a58'
             tabBarHideKeyboard={true}
@@ -32,8 +33,8 @@ const BottomTabNavigation = () => {
             inactiveColor='#3e2465'
             barStyle={{paddingBottom:48}}
         >
-           
-            <Tab.Screen 
+
+            <Tab.Screen
                 name="Home"
                 component={Home}
                 options={
@@ -43,20 +44,20 @@ const BottomTabNavigation = () => {
                         headerShown:false,
                         tabBarIcon:({focused})=> (
                             <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <FontAwesomeIcon 
-                                size={24} 
-                                icon={faHome} 
-                                color={focused ? COLORS.primary : COLORS.black} 
+                            <FontAwesomeIcon
+                                size={24}
+                                icon={faHome}
+                                color={focused ? COLORS.primary : COLORS.black}
                             />
                             <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>Home</Text>
                         </View>
                         )
                     }
                 }
-            
+
             />
-           
-            <Tab.Screen 
+
+            <Tab.Screen
                 name="Explore"
                 component={Explore}
                 options={
@@ -66,18 +67,18 @@ const BottomTabNavigation = () => {
                         headerShown:false,
                         tabBarIcon:({focused})=> (
                             <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <FontAwesomeIcon size={24} icon={faMap} 
-                            color={focused ? COLORS.primary:COLORS.black}/> 
-                            <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>Explore</Text>  
+                            <FontAwesomeIcon size={24} icon={faMap}
+                            color={focused ? COLORS.primary:COLORS.black}/>
+                            <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>Explore</Text>
                             </View>
                         )
                     }
                 }
-            
+
             />
-            <Tab.Screen 
+            <Tab.Screen
                 name="Plan"
-                component={Plan}
+                component={PlanStackNavigation}
                 options={
                     {
                         tabBarStyle:tabBarStyle,
@@ -86,15 +87,15 @@ const BottomTabNavigation = () => {
                         tabBarIcon:({focused})=> (
                             <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                             <FontAwesomeIcon size={24} icon={faGlobe}
-                            color={focused ? COLORS.primary:COLORS.black} />  
+                            color={focused ? COLORS.primary:COLORS.black} />
                             <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>Plan</Text>
                             </View>
                         )
                     }
                 }
-            
+
             />
-             <Tab.Screen 
+             <Tab.Screen
                 name="Profile"
                 component={Profile}
                 options={
@@ -105,13 +106,13 @@ const BottomTabNavigation = () => {
                         tabBarIcon:({focused})=> (
                             <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                             <FontAwesomeIcon size={24} icon={faUser}
-                            color={focused ? COLORS.primary:COLORS.black}/> 
+                            color={focused ? COLORS.primary:COLORS.black}/>
                             <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>Profile</Text>
                             </View>
                         )
                     }
                 }
-            
+
             />
         </Tab.Navigator>
   )
