@@ -45,7 +45,7 @@ export const fetchPlans = () => {
     //"https://jsonplaceholder.typicode.com/posts"
     //"http://10.0.0.7:4000/user/plans"
     try {
-      const response: AxiosResponse<Plan[]> = await axios.get("http://10.0.0.228:4000/user/plans");
+      const response: AxiosResponse<Plan[]> = await axios.get("http://localhost:4000/user/plans");
       dispatch({
         type: "FETCH_PLANS_SUCCESS",
         payload: response.data,
