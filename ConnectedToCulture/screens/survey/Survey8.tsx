@@ -10,6 +10,7 @@ import SurveyProgressBar from '../../components/survey/SurveyProgressBar';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faXmark} from '@fortawesome/free-solid-svg-icons/faXmark';
 import SurveyModal from '../../components/survey/SurveyModal';
+import Toast from 'react-native-toast-message';
 
 type Survey8Props = {
   navigation: NavigationProp<any>;
@@ -252,7 +253,17 @@ const Survey8 = ({navigation}: Survey8Props) => {
               borderWidth={1}
               btnText={disabled ? '🚫' : 'Next'}
               disabled={disabled}
-              onPress={() => navigation.navigate('Survey9')}
+              onPress={() => {
+                if (disabled) {
+                  Toast.show({
+                    type: 'error',
+                    text1: 'Please select ONE option before proceding',
+                    visibilityTime: 5000,
+                  });
+                } else {
+                  navigation.navigate('Survey9');
+                }
+              }}
               paddingHorizantal={16}
               paddingVertical={8}
               size={16}
