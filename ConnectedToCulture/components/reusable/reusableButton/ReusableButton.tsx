@@ -76,7 +76,7 @@ const ResuableButton: React.FC<Props> = ({
       // pointerEvents={disabled ? 'none' : 'auto'}
       style={disabled ? {opacity: 0.5} : {}}>
       <TouchableOpacity
-        onPress={disabled ? undefined : onPress}
+        onPress={onPress}
         style={btnContainerStyle}
         activeOpacity={disabled ? 1 : 0.2} // Ensure no change in opacity when disabled
       >
