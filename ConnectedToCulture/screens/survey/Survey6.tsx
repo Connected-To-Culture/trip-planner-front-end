@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {View, Text, ScrollView, Pressable} from 'react-native';
 import {Dimensions} from 'react-native';
 import React, {useState, useEffect, useContext} from 'react';
