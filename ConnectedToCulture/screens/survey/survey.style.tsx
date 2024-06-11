@@ -101,6 +101,7 @@ const surveyStyles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
+    gap: 20,
   },
   subtitle: {
     color: COLORS.darkGray,
