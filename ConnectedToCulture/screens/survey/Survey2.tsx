@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {View, Text, TextInput, ScrollView, Pressable} from 'react-native';
 import {Dimensions} from 'react-native';
 import React, {useState, useEffect, useContext} from 'react';
@@ -51,237 +52,286 @@ const Survey2 = ({navigation}: Survey2Props) => {
   }, [selected]);
 
   return (
-    <View style={surveyStyles.container}>
-      <ScrollView
-        contentContainerStyle={[
-          surveyStyles.scrollViewStyles,
-          {flex: orientation === 'landscape' ? undefined : 1},
-        ]}
-        showsVerticalScrollIndicator={false}>
-        <View style={surveyStyles.subContainer}>
-          <View>
-            <Pressable
-              style={surveyStyles.modalXContainer}
-              onPress={() => setModalOpen(true)}>
-              <FontAwesomeIcon
-                size={28}
-                icon={faXmark}
-                color={COLORS.primary}
-              />
-            </Pressable>
-            <SurveyProgressBar progress={18} />
-            <Text style={surveyStyles.question}>
-              Q2. What are your main interests when traveling to Africa?
-            </Text>
-            <Text style={surveyStyles.subtitle}>(Select all that apply)</Text>
+    <View style={{flex: 1, backgroundColor: COLORS.white}}>
+      <ScrollView>
+        <View style={surveyStyles.container}>
+          <ScrollView
+            contentContainerStyle={[
+              surveyStyles.scrollViewStyles,
+              {flex: orientation === 'landscape' ? undefined : 1},
+            ]}
+            showsVerticalScrollIndicator={false}>
+            <View style={surveyStyles.subContainer}>
+              <View>
+                <Pressable
+                  style={surveyStyles.modalXContainer}
+                  onPress={() => setModalOpen(true)}>
+                  <FontAwesomeIcon
+                    size={28}
+                    icon={faXmark}
+                    color={COLORS.primary}
+                  />
+                </Pressable>
+                <SurveyProgressBar progress={18} />
+                <Text style={surveyStyles.question}>
+                  Q2. What are your main interests when traveling to Africa?
+                </Text>
+                <Text style={surveyStyles.subtitle}>
+                  (Select all that apply)
+                </Text>
 
-            <View style={surveyStyles.surveyBtnsContainer}>
-              <ResuableButton
-                alignItems="flex-start"
-                backgroundColor={
-                  selected.q2wildlife ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q2wildlife ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Wildlife safari"
-                onPress={() =>
-                  setSelected({...selected, q2wildlife: !selected.q2wildlife})
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.q2wildlife ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                alignItems="flex-start"
-                backgroundColor={
-                  selected.q2historical ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q2historical ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Historical sites"
-                onPress={() =>
-                  setSelected({
-                    ...selected,
-                    q2historical: !selected.q2historical,
-                  })
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.q2historical ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                alignItems="flex-start"
-                backgroundColor={
-                  selected.q2cultural ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q2cultural ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Cultural experiences"
-                onPress={() =>
-                  setSelected({...selected, q2cultural: !selected.q2cultural})
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.q2cultural ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                alignItems="flex-start"
-                backgroundColor={
-                  selected.q2adventure ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q2adventure ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Adventure activities (e.g., hiking, rafting)"
-                onPress={() =>
-                  setSelected({...selected, q2adventure: !selected.q2adventure})
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.q2adventure ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                alignItems="flex-start"
-                backgroundColor={
-                  selected.q2food ? COLORS.primary : COLORS.white
-                }
-                borderColor={selected.q2food ? COLORS.primary : COLORS.black400}
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Food and culinary experiences"
-                onPress={() =>
-                  setSelected({...selected, q2food: !selected.q2food})
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={selected.q2food ? COLORS.white : COLORS.black}
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
-              <ResuableButton
-                alignItems="flex-start"
-                backgroundColor={
-                  selected.q2entertainment ? COLORS.primary : COLORS.white
-                }
-                borderColor={
-                  selected.q2entertainment ? COLORS.primary : COLORS.black400
-                }
-                borderRadius={10}
-                borderWidth={1}
-                btnText="Entertainment (e.g. nightlife, concert)"
-                onPress={() =>
-                  setSelected({
-                    ...selected,
-                    q2entertainment: !selected.q2entertainment,
-                  })
-                }
-                paddingHorizantal={24}
-                paddingVertical={13}
-                size={16}
-                textColor={
-                  selected.q2entertainment ? COLORS.white : COLORS.black
-                }
-                width={
-                  orientation === 'portrait' ? curWidth * 0.88 : curWidth * 0.7
-                }
-              />
+                <View style={surveyStyles.surveyBtnsContainer}>
+                  <ResuableButton
+                    alignItems="flex-start"
+                    backgroundColor={
+                      selected.q2wildlife ? COLORS.primary : COLORS.white
+                    }
+                    borderColor={
+                      selected.q2wildlife ? COLORS.primary : COLORS.black400
+                    }
+                    borderRadius={10}
+                    borderWidth={1}
+                    btnText="Wildlife safari"
+                    onPress={() =>
+                      setSelected({
+                        ...selected,
+                        q2wildlife: !selected.q2wildlife,
+                      })
+                    }
+                    paddingHorizantal={24}
+                    paddingVertical={13}
+                    size={16}
+                    textColor={
+                      selected.q2wildlife ? COLORS.white : COLORS.black
+                    }
+                    width={
+                      orientation === 'portrait'
+                        ? curWidth * 0.88
+                        : curWidth * 0.7
+                    }
+                  />
+                  <ResuableButton
+                    alignItems="flex-start"
+                    backgroundColor={
+                      selected.q2historical ? COLORS.primary : COLORS.white
+                    }
+                    borderColor={
+                      selected.q2historical ? COLORS.primary : COLORS.black400
+                    }
+                    borderRadius={10}
+                    borderWidth={1}
+                    btnText="Historical sites"
+                    onPress={() =>
+                      setSelected({
+                        ...selected,
+                        q2historical: !selected.q2historical,
+                      })
+                    }
+                    paddingHorizantal={24}
+                    paddingVertical={13}
+                    size={16}
+                    textColor={
+                      selected.q2historical ? COLORS.white : COLORS.black
+                    }
+                    width={
+                      orientation === 'portrait'
+                        ? curWidth * 0.88
+                        : curWidth * 0.7
+                    }
+                  />
+                  <ResuableButton
+                    alignItems="flex-start"
+                    backgroundColor={
+                      selected.q2cultural ? COLORS.primary : COLORS.white
+                    }
+                    borderColor={
+                      selected.q2cultural ? COLORS.primary : COLORS.black400
+                    }
+                    borderRadius={10}
+                    borderWidth={1}
+                    btnText="Cultural experiences"
+                    onPress={() =>
+                      setSelected({
+                        ...selected,
+                        q2cultural: !selected.q2cultural,
+                      })
+                    }
+                    paddingHorizantal={24}
+                    paddingVertical={13}
+                    size={16}
+                    textColor={
+                      selected.q2cultural ? COLORS.white : COLORS.black
+                    }
+                    width={
+                      orientation === 'portrait'
+                        ? curWidth * 0.88
+                        : curWidth * 0.7
+                    }
+                  />
+                  <ResuableButton
+                    alignItems="flex-start"
+                    backgroundColor={
+                      selected.q2adventure ? COLORS.primary : COLORS.white
+                    }
+                    borderColor={
+                      selected.q2adventure ? COLORS.primary : COLORS.black400
+                    }
+                    borderRadius={10}
+                    borderWidth={1}
+                    btnText="Adventure activities (e.g., hiking, rafting)"
+                    onPress={() =>
+                      setSelected({
+                        ...selected,
+                        q2adventure: !selected.q2adventure,
+                      })
+                    }
+                    paddingHorizantal={24}
+                    paddingVertical={13}
+                    size={16}
+                    textColor={
+                      selected.q2adventure ? COLORS.white : COLORS.black
+                    }
+                    width={
+                      orientation === 'portrait'
+                        ? curWidth * 0.88
+                        : curWidth * 0.7
+                    }
+                  />
+                  <ResuableButton
+                    alignItems="flex-start"
+                    backgroundColor={
+                      selected.q2food ? COLORS.primary : COLORS.white
+                    }
+                    borderColor={
+                      selected.q2food ? COLORS.primary : COLORS.black400
+                    }
+                    borderRadius={10}
+                    borderWidth={1}
+                    btnText="Food and culinary experiences"
+                    onPress={() =>
+                      setSelected({...selected, q2food: !selected.q2food})
+                    }
+                    paddingHorizantal={24}
+                    paddingVertical={13}
+                    size={16}
+                    textColor={selected.q2food ? COLORS.white : COLORS.black}
+                    width={
+                      orientation === 'portrait'
+                        ? curWidth * 0.88
+                        : curWidth * 0.7
+                    }
+                  />
+                  <ResuableButton
+                    alignItems="flex-start"
+                    backgroundColor={
+                      selected.q2entertainment ? COLORS.primary : COLORS.white
+                    }
+                    borderColor={
+                      selected.q2entertainment
+                        ? COLORS.primary
+                        : COLORS.black400
+                    }
+                    borderRadius={10}
+                    borderWidth={1}
+                    btnText="Entertainment (e.g. nightlife, concert)"
+                    onPress={() =>
+                      setSelected({
+                        ...selected,
+                        q2entertainment: !selected.q2entertainment,
+                      })
+                    }
+                    paddingHorizantal={24}
+                    paddingVertical={13}
+                    size={16}
+                    textColor={
+                      selected.q2entertainment ? COLORS.white : COLORS.black
+                    }
+                    width={
+                      orientation === 'portrait'
+                        ? curWidth * 0.88
+                        : curWidth * 0.7
+                    }
+                  />
+                </View>
+
+                <View style={surveyStyles.specifyOtherContainer}>
+                  <Text style={surveyStyles.otherText}>
+                    Other (please specify):
+                  </Text>
+                  <TextInput
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    onChangeText={text =>
+                      setSelected({...selected, q2Text: text})
+                    }
+                    style={surveyStyles.textInput}
+                    value={selected.q2Text}
+                  />
+                </View>
+              </View>
+
+              <View
+                style={
+                  orientation === 'portrait'
+                    ? surveyStyles.backNextBtnContainer
+                    : surveyStyles.backNextBtnContainerLandscape
+                }>
+                <ResuableButton
+                  backgroundColor={COLORS.white}
+                  borderColor={COLORS.primary}
+                  borderRadius={8}
+                  borderWidth={1}
+                  btnText="Back"
+                  onPress={() => navigation.navigate('Survey1')}
+                  paddingHorizantal={16}
+                  paddingVertical={8}
+                  size={16}
+                  textColor={COLORS.primary}
+                  width={
+                    orientation === 'portrait'
+                      ? curWidth * 0.42
+                      : curWidth * 0.34
+                  }
+                />
+                <ResuableButton
+                  backgroundColor={disabled ? COLORS.darkGray : COLORS.primary}
+                  borderColor={disabled ? COLORS.darkGray : COLORS.primary}
+                  borderRadius={8}
+                  borderWidth={1}
+                  btnText={disabled ? '🚫' : 'Next'}
+                  disabled={disabled}
+                  onPress={() => {
+                    if (disabled) {
+                      Toast.show({
+                        type: 'error',
+                        text1:
+                          'Please select at least ONE option before proceding',
+                        text2: 'Or type something in the "Other" input field',
+                        visibilityTime: 5000,
+                      });
+                    } else {
+                      navigation.navigate('Survey3');
+                    }
+                  }}
+                  paddingHorizantal={16}
+                  paddingVertical={8}
+                  size={16}
+                  textColor={COLORS.white}
+                  width={
+                    orientation === 'portrait'
+                      ? curWidth * 0.42
+                      : curWidth * 0.34
+                  }
+                />
+              </View>
             </View>
-
-            <View style={surveyStyles.specifyOtherContainer}>
-              <Text style={surveyStyles.otherText}>
-                Other (please specify):
-              </Text>
-              <TextInput
-                autoCapitalize="none"
-                autoCorrect={false}
-                onChangeText={text => setSelected({...selected, q2Text: text})}
-                style={surveyStyles.textInput}
-                value={selected.q2Text}
-              />
-            </View>
-          </View>
-
-          <View
-            style={
-              orientation === 'portrait'
-                ? surveyStyles.backNextBtnContainer
-                : surveyStyles.backNextBtnContainerLandscape
-            }>
-            <ResuableButton
-              backgroundColor={COLORS.white}
-              borderColor={COLORS.primary}
-              borderRadius={8}
-              borderWidth={1}
-              btnText="Back"
-              onPress={() => navigation.navigate('Survey1')}
-              paddingHorizantal={16}
-              paddingVertical={8}
-              size={16}
-              textColor={COLORS.primary}
-              width={
-                orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
-              }
-            />
-            <ResuableButton
-              backgroundColor={disabled ? COLORS.darkGray : COLORS.primary}
-              borderColor={disabled ? COLORS.darkGray : COLORS.primary}
-              borderRadius={8}
-              borderWidth={1}
-              btnText={disabled ? '🚫' : 'Next'}
-              disabled={disabled}
-              onPress={() => {
-                if (disabled) {
-                  Toast.show({
-                    type: 'error',
-                    text1: 'Please select at least ONE option before proceding',
-                    text2: 'Or type something in the "Other" input field',
-                    visibilityTime: 5000,
-                  });
-                } else {
-                  navigation.navigate('Survey3');
-                }
-              }}
-              paddingHorizantal={16}
-              paddingVertical={8}
-              size={16}
-              textColor={COLORS.white}
-              width={
-                orientation === 'portrait' ? curWidth * 0.42 : curWidth * 0.34
-              }
-            />
-          </View>
+          </ScrollView>
+          <SurveyModal
+            visible={modalOpen}
+            onClose={() => setModalOpen(false)}
+          />
         </View>
       </ScrollView>
-      <SurveyModal visible={modalOpen} onClose={() => setModalOpen(false)} />
     </View>
   );
 };
