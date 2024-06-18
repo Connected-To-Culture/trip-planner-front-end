@@ -25,6 +25,9 @@ import DetailsPage from './screens/explore/details/DetailsPage';
 import { Provider } from 'react-redux';
 import { store } from './Redux/Store'
 
+// Chat component
+import ChatComponent from './components/ChatComponent.tsx';
+import ChatScreen from './screens/ChatScreen'; // Import the chat screen
 
 function App(): React.JSX.Element {
   
@@ -50,6 +53,7 @@ StatusBar.setBarStyle('dark-content');
       <Stack.Screen name='adventures' component={Adventures} options={{headerShown:false}} />
       <Stack.Screen name='FIlter' component={Filter} options={{headerShown:false}} />
       <Stack.Screen name='Details' component={DetailsPage} options={{headerShown:false}} />
+      <Stack.Screen name="Chat" component={ChatScreen} title="Chat" />
     </Stack.Navigator>
   </NavigationContainer>
   </Provider>

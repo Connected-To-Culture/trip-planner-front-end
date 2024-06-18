@@ -10,6 +10,10 @@ import {faMap} from '@fortawesome/free-solid-svg-icons';
 import {faGlobe} from '@fortawesome/free-solid-svg-icons';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 import COLORS from '../constants/theme';
+import ChatScreen from '../screens/ChatScreen';
+import {faComments} from '@fortawesome/free-solid-svg-icons';
+
+
 const Tab=createBottomTabNavigator();
 
 const tabBarStyle={
@@ -94,6 +98,27 @@ const BottomTabNavigation = () => {
                 }
             
             />
+
+            <Tab.Screen
+            name="Chat"
+            component={ChatScreen}
+            options={{
+                tabBarStyle: tabBarStyle,
+                tabBarShowLabel: false,
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                        <FontAwesomeIcon
+                            size={24}
+                            icon={faComments} // This is a placeholder icon, change as necessary
+                            color={focused ? COLORS.primary : COLORS.black}
+                        />
+                        <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>Chat</Text>
+                    </View>
+                )
+            }}
+        />
+
              <Tab.Screen 
                 name="Profile"
                 component={Profile}
