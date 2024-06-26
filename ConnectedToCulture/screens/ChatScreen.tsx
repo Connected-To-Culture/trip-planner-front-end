@@ -8,7 +8,7 @@ import ChatComponent from '../components/ChatComponent'; // Adjust path as neces
 const ChatScreen = () => {
   return (
     <View style={styles.screen}>
-      <Text style={styles.heading}>Chat with Us</Text>
+      <Text style={styles.heading}>Chat with Sefa</Text>
       <ChatComponent />
     </View>
   );

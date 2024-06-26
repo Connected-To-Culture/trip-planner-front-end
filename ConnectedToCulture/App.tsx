@@ -53,7 +53,7 @@ StatusBar.setBarStyle('dark-content');
       <Stack.Screen name='adventures' component={Adventures} options={{headerShown:false}} />
       <Stack.Screen name='FIlter' component={Filter} options={{headerShown:false}} />
       <Stack.Screen name='Details' component={DetailsPage} options={{headerShown:false}} />
-      <Stack.Screen name="Chat" component={ChatScreen} title="Chat" />
+      <Stack.Screen name="Sefa" component={ChatScreen} title="Sefa" options={{ tabBarLabel: 'Sefa' }}/>
     </Stack.Navigator>
   </NavigationContainer>
   </Provider>

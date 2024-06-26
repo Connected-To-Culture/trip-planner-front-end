@@ -13,7 +13,7 @@ const initialState: ChatState = {
 };
 
 const chatSlice = createSlice({
-  name: 'chat',
+  name: 'Sefa',
   initialState,
   reducers: {
     // Action to handle sending a message (you might use it to update UI optimistically)

@@ -100,7 +100,7 @@ const BottomTabNavigation = () => {
             />
 
             <Tab.Screen
-            name="Chat"
+            name="Sefa"
             component={ChatScreen}
             options={{
                 tabBarStyle: tabBarStyle,
@@ -113,7 +113,7 @@ const BottomTabNavigation = () => {
                             icon={faComments} // This is a placeholder icon, change as necessary
                             color={focused ? COLORS.primary : COLORS.black}
                         />
-                        <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>Chat</Text>
+                        <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>Sefa</Text>
                     </View>
                 )
             }}
