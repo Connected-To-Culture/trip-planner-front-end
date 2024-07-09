@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { View, TextInput, ScrollView, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,7 +5,6 @@ import { sendMessage, fetchMessageSuccess, fetchMessageFailure } from '../Redux/
 import { RootState } from '../Redux/Store';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from "../constants/theme.tsx";
-
 
 const ChatComponent: React.FC = () => {
   const [input, setInput] = useState('');
@@ -24,20 +22,60 @@ const ChatComponent: React.FC = () => {
 
     if (isUserMessage) {
       try {
-        const response = await fetch('http://10.0.2.2:8000/api/chat', {
+        let endpoint = '/api/chat';
+        let body = { text: trimmedInput, sessionId: 'unique-session-id' };
+
+        // Check if the input matches any specific intents
+        if (trimmedInput.toLowerCase().includes('invest')) {
+          endpoint = '/dialogflow-webhook';
+          body = {
+            queryResult: {
+              queryText: trimmedInput,
+              intent: { displayName: "ask about investing" },
+              parameters: {}
+            }
+          };
+        } else if (trimmedInput.toLowerCase().includes('stock')) {
+          endpoint = '/dialogflow-webhook';
+          body = {
+            queryResult: {
+              queryText: trimmedInput,
+              intent: { displayName: "ask about stocks" },
+              parameters: {}
+            }
+          };
+        }
+
+        console.log(`Sending request to: http://10.0.2.2:8000${endpoint}`);
+        const response = await fetch(`http://10.0.2.2:8000${endpoint}`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ text: trimmedInput, sessionId: 'unique-session-id' }),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
         });
 
+        console.log('Response status:', response.status);
+
         if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+          const errorText = await response.text();
+          console.error('Error response:', errorText);
+          throw new Error(`HTTP error! Status: ${response.status}, Body: ${errorText}`);
         }
 
         const data = await response.json();
-        dispatch(fetchMessageSuccess({ text: data.reply, isUser: false }));
+        console.log('Received data:', data);
+
+        let replyText;
+        if (endpoint === '/api/chat') {
+          replyText = data.reply;
+        } else {
+          replyText = data.fulfillmentText;
+        }
+
+        if (replyText) {
+          dispatch(fetchMessageSuccess({ text: replyText, isUser: false }));
+        } else {
+          throw new Error('No valid response text found');
+        }
       } catch (error) {
         console.error('Error fetching chat response:', error);
         dispatch(fetchMessageFailure({ error: error.toString() }));
@@ -60,7 +98,7 @@ const ChatComponent: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        {/*<Text style={styles.headerText}>Chat with Sefa</Text>*/}
+        <Text style={styles.headerText}>Chat with Sefa</Text>
       </View>
       <ScrollView
         style={styles.messagesContainer}
@@ -97,6 +135,7 @@ const ChatComponent: React.FC = () => {
     </SafeAreaView>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
