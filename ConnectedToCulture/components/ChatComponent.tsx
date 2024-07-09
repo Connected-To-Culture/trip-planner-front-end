@@ -98,7 +98,7 @@ const ChatComponent: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Chat with Sefa</Text>
+        {/*<Text style={styles.headerText}>Chat with Sefa</Text>*/}
       </View>
       <ScrollView
         style={styles.messagesContainer}
