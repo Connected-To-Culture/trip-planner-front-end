@@ -11,7 +11,7 @@
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.ConnectedToCulture.C2C</key>
-		<string>ConnectedToCulture_C2C_ad_hoc</string>
+		<string>ConnectedToCulture_AdHoc_Profile_717</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>Apple Distribution</string>
@@ -25,3 +25,4 @@
 	<string>&lt;thin-for-all-variants&gt;</string>
 </dict>
 </plist>
+
